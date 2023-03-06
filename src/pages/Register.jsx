@@ -101,7 +101,7 @@ const Register = () => {
 
       try {
         const response = await axios.post(
-          `${REACT_APP_FLASK_BACKEND}/api/auth/register`,
+          `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`,
           formData,
           {
             headers: {
@@ -169,7 +169,7 @@ const Register = () => {
 
       try {
         const response = await axios.post(
-          `${REACT_APP_FLASK_BACKEND}/api/auth/register`,
+          `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`,
           formData,
           {
             headers: {

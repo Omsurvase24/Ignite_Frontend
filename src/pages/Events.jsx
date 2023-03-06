@@ -4,7 +4,7 @@ import EventPopup from '../components/event/EventPopup';
 import styles from '../styles/pages/Events.module.css';
 
 const Events = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   return (
     <div className={styles.events}>
       <h1>Events</h1>

@@ -74,6 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 
 .popup {
@@ -84,7 +85,6 @@
   padding: 50px;
   animation: dropTop 0.3s linear;
   position: relative;
-  z-index: 10;
 }
 
 @keyframes dropTop {
@@ -207,4 +207,48 @@
   color: #fdfdfd;
   line-height: 30px;
   margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 860px) {
+  .events {
+    padding-top: 20px;
+  }
+  .content .tabs {
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .popup {
+    padding: 10px;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .content .tabs {
+    border-right: none;
+    padding-right: 0px;
+    padding-top: 20px;
+    border-bottom: 2px solid #ff6347;
+    margin-bottom: 20px;
+  }
+  .content .intro,
+  .content .rules,
+  .content .rounds {
+    padding-left: 0;
+    padding-top: 10px;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .gap {
+    margin-bottom: 100px;
+  }
+  .popup .close {
+    right: 10px;
+    top: 10px;
+    font-size: 40px;
+  }
 }

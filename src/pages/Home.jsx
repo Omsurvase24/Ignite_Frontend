@@ -1,4 +1,5 @@
 import React from 'react';
+import { ParticleBackground } from '../components/ParticleBackground';
 import styles from '../styles/pages/Home.module.css';
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
         <button>Register Here</button>
         <button className={styles.filled}>View Events</button>
       </div>
+      <ParticleBackground></ParticleBackground>
     </div>
   );
 };

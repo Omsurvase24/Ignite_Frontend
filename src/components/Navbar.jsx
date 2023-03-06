@@ -21,19 +21,19 @@ const Navbar = () => {
       )}
 
       <ul>
-        <li>
+        <li onClick={() => setOpen(false)}>
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li onClick={() => setOpen(false)}>
           <Link to="/about">About us</Link>
         </li>
-        <li>
+        <li onClick={() => setOpen(false)}>
           <Link to="/events">Events</Link>
         </li>
-        <li>
+        <li onClick={() => setOpen(false)}>
           <Link to="/sponsors">Sponsors</Link>
         </li>
-        <li>
+        <li onClick={() => setOpen(false)}>
           <Link to="/sponsors">Gallery</Link>
         </li>
       </ul>

@@ -8,6 +8,8 @@ nav {
   top: 0;
   padding: 20px 80px;
   transition: 0.5s all ease-in-out;
+  backdrop-filter: blur(10px);
+  /* z-index: 8; */
 }
 
 nav .close {
@@ -16,7 +18,7 @@ nav .close {
   position: fixed;
   top: 15px;
   left: 15px;
-  font-size: 30px;
+  font-size: 35px;
   display: none;
 }
 
@@ -59,6 +61,7 @@ nav ul li a:hover {
     left: -100%;
     width: 100%;
     z-index: 1;
+    backdrop-filter: unset;
   }
 
   nav ul {

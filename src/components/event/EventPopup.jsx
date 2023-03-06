@@ -33,6 +33,7 @@ const EventPopup = ({ setOpen }) => {
               </p>
               <p>100 INR(Rs.50 each)</p>
               <button>Register here</button>
+              <div className={styles.gap}></div>
             </div>
           ) : tab === 'rules' ? (
             <div className={styles.rules}>
@@ -56,6 +57,7 @@ const EventPopup = ({ setOpen }) => {
                   "cout" statements.
                 </li>
               </ul>
+              <div className={styles.gap}></div>
             </div>
           ) : (
             <div className={styles.rounds}>
@@ -97,6 +99,7 @@ const EventPopup = ({ setOpen }) => {
                   numbers of errors using which the winners will be decided.
                 </li>
               </ul>
+              <div className={styles.gap}></div>
             </div>
           )}
         </div>

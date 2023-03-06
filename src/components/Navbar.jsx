@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineClose } from 'react-icons/ai';
+import { IoList } from 'react-icons/io5';
 import styles from '../styles/components/Layout.module.css';
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav>
+    <nav className={`${open ? styles.show : ''}`}>
       <img src="/ignite-logo.png" alt="ignite-logo" />
+
+      {open ? (
+        <AiOutlineClose
+          className={styles.close}
+          onClick={() => setOpen(!open)}
+        />
+      ) : (
+        <IoList className={styles.close} onClick={() => setOpen(!open)} />
+      )}
 
       <ul>
         <li>

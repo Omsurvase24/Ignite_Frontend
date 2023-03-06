@@ -84,6 +84,7 @@
   padding: 50px;
   animation: dropTop 0.3s linear;
   position: relative;
+  z-index: 10;
 }
 
 @keyframes dropTop {

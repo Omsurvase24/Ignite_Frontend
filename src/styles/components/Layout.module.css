@@ -7,6 +7,21 @@ nav {
   right: 0;
   top: 0;
   padding: 20px 80px;
+  transition: 0.5s all ease-in-out;
+}
+
+nav .close {
+  z-index: 2;
+  color: #fdfdfd;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 30px;
+  display: none;
+}
+
+.show {
+  left: 0;
 }
 
 nav img {
@@ -32,4 +47,36 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #0cd1eb;
+}
+
+@media only screen and (max-width: 860px) {
+  nav {
+    flex-direction: column;
+    background: #191424;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 15px 0px;
+  }
+
+  nav ul li a {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  nav .close {
+    display: block;
+  }
 }

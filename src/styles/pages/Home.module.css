@@ -5,21 +5,24 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 100px;
+  padding: 100px 10px 10px 20px;
 }
 
-.home h3 {
+.home h3,
+.home h2 {
   color: #fdfdfd;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 1.8rem;
   margin: 5px 0px;
+  text-align: center;
 }
 
 .home h1 {
   color: #fdfdfd;
-  font-size: 300%;
+  font-size: 3rem;
   font-weight: 600;
   margin: 20px 10px;
+  text-align: center;
 }
 
 .home div {
@@ -60,4 +63,23 @@
   background: none;
   border-color: #fdfdfd;
   color: #fdfdfd;
+}
+
+@media only screen and (max-width: 860px) {
+  .home {
+    padding-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .home h3 {
+    font-size: 1.2rem;
+    line-height: 30px;
+    margin: 0px;
+  }
+  .home h2 {
+    font-size: 1.8rem;
+    letter-spacing: 0.8px;
+    margin: 0px;
+  }
 }

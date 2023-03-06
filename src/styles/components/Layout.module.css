@@ -1,0 +1,35 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 20px 80px;
+}
+
+nav img {
+  width: 130px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0px 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fdfdfd;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: 0.5s ease all;
+}
+
+nav ul li a:hover {
+  color: #0cd1eb;
+}

@@ -1,0 +1,99 @@
+.register {
+  background: #2b2141;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+.register img {
+  width: 150px;
+}
+
+.register h1 {
+  color: #fdfdfd;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 20px 10px;
+  text-align: center;
+}
+
+.register form {
+  width: 500px;
+  margin-top: 40px;
+}
+
+.register form .input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input label {
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  background: #2b2141;
+  padding: 0px 5px;
+  font-size: 15px;
+  color: #fdfdfd;
+  transition: 0.5s;
+  text-transform: capitalize;
+}
+
+.input span {
+  color: red;
+  font-size: 16px;
+}
+
+.input input,
+.input select {
+  border: 2px solid #fdfdfd;
+  background: transparent;
+  border-radius: 5px;
+  outline: none;
+  padding: 12px 10px;
+  font-size: 18px;
+  color: #fdfdfd;
+}
+
+.input select option {
+  color: #2b2141;
+}
+
+.register button {
+  background: #0cd1eb;
+  border-color: #0cd1eb;
+  color: #2b2141;
+  width: 100%;
+  padding: 12px 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  .register {
+    padding-top: 50px;
+  }
+  .register h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .register form {
+    width: 100%;
+  }
+
+  .register {
+    padding: 50px 20px;
+  }
+}

@@ -6,6 +6,10 @@ import Events from './pages/Events';
 import Sponsors from './pages/Sponsors';
 import Gallery from './pages/Gallery';
 import Layout from './components/Layout';
+import Register from './pages/Register';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
@@ -17,7 +21,9 @@ const App = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
+        <ToastContainer />
       </Layout>
     </Router>
   );

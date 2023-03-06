@@ -3,13 +3,12 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
-  padding: 20px 80px;
+  padding: 10px 80px;
   transition: 0.5s all ease-in-out;
-  backdrop-filter: blur(10px);
-  /* z-index: 8; */
+  z-index: 8;
 }
 
 nav .close {
@@ -19,6 +18,8 @@ nav .close {
   top: 15px;
   left: 15px;
   font-size: 35px;
+  background: #191424;
+  border-radius: 2px;
   display: none;
 }
 
@@ -54,7 +55,7 @@ nav ul li a:hover {
 @media only screen and (max-width: 860px) {
   nav {
     flex-direction: column;
-    background: #191424;
+    background: #2b2141;
     justify-content: center;
     top: 0;
     bottom: 0;

@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
-import { IoList } from 'react-icons/io5';
+import { MdMenu } from 'react-icons/md';
 import styles from '../styles/components/Layout.module.css';
 
 const Navbar = () => {
+  const location = useLocation();
+
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className={`${open ? styles.show : ''}`}>
-      <img src="/ignite-logo.png" alt="ignite-logo" />
+    <nav
+      className={`${open ? styles.show : ''}`}
+      style={{ background: location.pathname !== '/' && '#2b2141' }}
+    >
+      <Link to="/">
+        <img src="/ignite-logo.png" alt="ignite-logo" />
+      </Link>
 
       {open ? (
         <AiOutlineClose
@@ -17,7 +24,7 @@ const Navbar = () => {
           onClick={() => setOpen(!open)}
         />
       ) : (
-        <IoList className={styles.close} onClick={() => setOpen(!open)} />
+        <MdMenu className={styles.close} onClick={() => setOpen(!open)} />
       )}
 
       <ul>

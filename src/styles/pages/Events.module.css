@@ -5,7 +5,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 120px;
+}
+
+.events img {
+  width: 150px;
+  margin-top: 50px;
 }
 
 .events h1 {
@@ -14,7 +19,6 @@
   font-weight: 600;
   margin: 20px 10px;
   text-transform: uppercase;
-  margin-top: 50px;
 }
 
 .events .allEvents {
@@ -74,7 +78,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 500;
 }
 
 .popup {
@@ -144,6 +148,10 @@
   cursor: pointer;
   display: block;
   transition: 0.5s ease all;
+}
+
+.tabs .active {
+  color: #ff6347;
 }
 
 .tabs button:hover {
@@ -219,6 +227,14 @@
 }
 
 @media only screen and (max-width: 650px) {
+  .events h2 {
+    text-align: left;
+    margin-bottom: -10px;
+  }
+  .events h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
   .popup {
     padding: 10px;
   }
@@ -232,15 +248,21 @@
     border-bottom: 2px solid #ff6347;
     margin-bottom: 20px;
   }
+  .tabs button {
+    font-size: 1.5rem;
+    margin: 15px 0px;
+  }
+  .intro p {
+    font-weight: 300;
+  }
   .content .intro,
   .content .rules,
   .content .rounds {
     padding-left: 0;
-    padding-top: 10px;
     height: 100%;
     overflow-x: auto;
     overflow-y: auto;
-    padding-top: 30px;
+    padding-top: 0px;
     padding-bottom: 30px;
   }
   .gap {

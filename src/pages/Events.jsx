@@ -7,6 +7,8 @@ const Events = () => {
   const [open, setOpen] = useState(true);
   return (
     <div className={styles.events}>
+      <img src="/ignite-logo.png" alt="ignite-logo" />
+
       <h1>Events</h1>
       {open && <EventPopup setOpen={setOpen} />}
 

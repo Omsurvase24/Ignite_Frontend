@@ -15,9 +15,24 @@ const EventPopup = ({ setOpen }) => {
         <h2>Design X</h2>
         <div className={styles.content}>
           <div className={styles.tabs}>
-            <button onClick={() => setTabs('intro')}>Intro</button>
-            <button onClick={() => setTabs('rules')}>Rules</button>
-            <button onClick={() => setTabs('rounds')}>Rounds</button>
+            <button
+              onClick={() => setTabs('intro')}
+              className={`${tab === 'intro' ? styles.active : ''}`}
+            >
+              Intro
+            </button>
+            <button
+              onClick={() => setTabs('rules')}
+              className={`${tab === 'rules' ? styles.active : ''}`}
+            >
+              Rules
+            </button>
+            <button
+              onClick={() => setTabs('rounds')}
+              className={`${tab === 'rounds' ? styles.active : ''}`}
+            >
+              Rounds
+            </button>
           </div>
           {tab === 'intro' ? (
             <div className={styles.intro}>

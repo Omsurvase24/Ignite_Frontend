@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../styles/pages/Sponsors.module.css';
 
 const Sponsors = () => {
-  return <div>Sponsors</div>;
+  return <div className={styles.sponsors}></div>;
 };
 
 export default Sponsors;

@@ -1,0 +1,66 @@
+.treasurer {
+  background: #2b2141;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+}
+
+.treasurer .reload {
+  background: green;
+  padding: 8px 20px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  border-radius: 5px;
+  right: 0px;
+  display: inline-block;
+}
+
+.treasurer h1 {
+  color: #fdfdfd;
+  font-size: 300%;
+  font-weight: 600;
+  margin: 20px 10px;
+  text-transform: uppercase;
+}
+
+.treasurer table {
+  color: #fdfdfd;
+}
+
+.treasurer table,
+.treasurer table th,
+.treasurer table td {
+  border: 1px solid #fdfdfd;
+  border-collapse: collapse;
+}
+
+.treasurer table td,
+.treasurer table th {
+  padding: 5px 3px;
+}
+
+.treasurer table th {
+  font-weight: 500;
+  color: #0cd1eb;
+}
+
+.treasurer table td {
+  font-size: 15px;
+}
+
+.treasurer button {
+  background: red;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+  color: #fdfdfd;
+  font-weight: 500;
+}
+
+.treasurer .accept {
+  background: green;
+}

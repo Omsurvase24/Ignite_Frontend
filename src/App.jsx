@@ -14,6 +14,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import Admin from './pages/admin/Admin';
+import Dashboard from './pages/admin/Dashboard';
+import TreasurerLogin from './pages/treasurer/TreasurerLogin';
+import TreasurerDashboard from './pages/treasurer/TreasurerDashboard';
+import NotFound from './pages/NotFound';
+
 const App = () => {
   useEffect(() => {
     AOS.init();
@@ -29,6 +35,9 @@ const App = () => {
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/treasurer" element={<TreasurerLogin />} />
+          <Route path="/treasurer/dashboard" element={<TreasurerDashboard />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer />
       </Layout>

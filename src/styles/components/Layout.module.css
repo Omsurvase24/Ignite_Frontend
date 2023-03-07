@@ -46,10 +46,57 @@ nav ul li a {
   font-size: 1.2rem;
   font-weight: 500;
   transition: 0.5s ease all;
+  text-transform: capitalize;
 }
 
 nav ul li a:hover {
   color: #0cd1eb;
+}
+
+/* footer */
+footer {
+  background: #2b2141;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 10px;
+}
+
+footer img {
+  width: 100px;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+
+footer ul li {
+  list-style: none;
+  margin: 0px 10px;
+}
+
+.socialIcon {
+  font-size: 25px;
+}
+
+footer ul li a {
+  color: #fdfdfd;
+  text-decoration: none;
+  transition: 0.5s all ease-in-out;
+}
+
+footer ul li a:hover {
+  color: #0cd1eb;
+}
+
+footer p {
+  color: #fdfdfd;
+  font-size: 1.1rem;
+  margin-top: 5px;
 }
 
 @media only screen and (max-width: 860px) {
@@ -82,5 +129,18 @@ nav ul li a:hover {
 
   nav .close {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  footer ul {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  footer ul li {
+    margin: 5px 10px;
+  }
+  footer img {
+    margin-bottom: 0;
   }
 }

@@ -9,6 +9,11 @@
   overflow-x: hidden;
 }
 
+.sponsors img {
+  width: 150px;
+  margin-top: 50px;
+}
+
 .sponsors h1 {
   color: #fdfdfd;
   font-size: 300%;

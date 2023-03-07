@@ -14,7 +14,7 @@ const Home = () => {
       <h1>MPULSE IGNITE 2023</h1>
       <h2>COMING SOON </h2>
 
-      <div data-aos="fade-up" data-aos-duration="1000">
+      <div>
         <button onClick={() => navigate('/register')}>Register Here</button>
         <button className={styles.filled} onClick={() => navigate('/events')}>
           View Events

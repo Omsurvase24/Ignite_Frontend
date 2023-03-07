@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import EventCard from '../components/event/EventCard';
 import EventPopup from '../components/event/EventPopup';
 import styles from '../styles/pages/Events.module.css';
+import data from '../utils/events';
 
 const Events = () => {
   const [open, setOpen] = useState(false);
@@ -10,14 +11,20 @@ const Events = () => {
       <img src="/ignite-logo.png" alt="ignite-logo" />
 
       <h1>Events</h1>
+
       {open && <EventPopup setOpen={setOpen} />}
 
       <div className={styles.allEvents}>
-        <EventCard image="/events/bugshodh.png" title="Bugshodh" />
-        <EventCard image="/events/designx.png" title="Design X" />
-        <EventCard image="/events/hackathon.png" title="Hackathon" />
-        <EventCard image="/events/mockplacement.png" title="Mock Placement" />
-        <EventCard image="/events/treasurehunt.png" title="Treasure Hunt" />
+        {data.map((event) => (
+          <EventCard
+            key={event.id}
+            image={event.image}
+            title={event.title}
+            data={event}
+            setOpen={setOpen}
+            open={open}
+          />
+        ))}
       </div>
     </div>
   );

@@ -93,7 +93,7 @@
 }
 
 .popup {
-  background: #41355a;
+  background: #2b2141;
   border-radius: 5px;
   width: 100%;
   height: 100%;
@@ -138,13 +138,12 @@
 
 .popup .content {
   display: flex;
-  justify-content: center;
   padding: 5%;
 }
 
 /* tabs */
 .content .tabs {
-  border-right: 3px solid #ff6347;
+  border-right: 3px solid #0cd1eb;
   padding-right: 150px;
   padding-top: 30px;
 }
@@ -152,21 +151,21 @@
 .tabs button {
   background: none;
   border: none;
-  font-size: 25px;
+  font-size: 1.2rem;
   color: #fdfdfd;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   cursor: pointer;
   display: block;
   transition: 0.5s ease all;
 }
 
 .tabs .active {
-  color: #ff6347;
+  color: #0cd1eb;
 }
 
 .tabs button:hover {
-  color: #ff6347;
+  color: #0cd1eb;
 }
 
 /* intro */
@@ -179,52 +178,56 @@
   overflow-y: auto;
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-right: 30px;
+  width: 100%;
 }
 
 .intro p {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 400;
   color: #fdfdfd;
-  line-height: 30px;
+  line-height: 25px;
   margin-bottom: 20px;
 }
 
 .intro button {
-  background: #ff6347;
-  padding: 10px;
-  font-size: 1.1rem;
+  background: #0cd1eb;
+  padding: 10px 12px;
+  font-size: 1rem;
   border: none;
-  color: #fdfdfd;
+  color: #2b2141;
+  font-weight: 500;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 /* rules */
 .rules ul li {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 400;
   color: #fdfdfd;
-  line-height: 30px;
-  margin-bottom: 10px;
+  line-height: 25px;
+  margin-bottom: 20px;
 }
 
 /* rounds */
 .rounds p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  color: #ff6347;
-  line-height: 30px;
+  color: #0cd1eb;
+  line-height: 25px;
   margin-bottom: 20px;
 }
 
 .rounds ul {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .rounds ul li {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 400;
   color: #fdfdfd;
-  line-height: 30px;
+  line-height: 25px;
   margin-bottom: 10px;
 }
 
@@ -256,11 +259,11 @@
     border-right: none;
     padding-right: 0px;
     padding-top: 20px;
-    border-bottom: 2px solid #ff6347;
+    border-bottom: 2px solid #0cd1eb;
     margin-bottom: 20px;
   }
   .tabs button {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 15px 0px;
   }
   .intro p {
@@ -275,6 +278,7 @@
     overflow-y: auto;
     padding-top: 0px;
     padding-bottom: 30px;
+    margin-top: 0px;
   }
   .gap {
     margin-bottom: 100px;

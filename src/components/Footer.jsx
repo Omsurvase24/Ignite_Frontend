@@ -33,17 +33,26 @@ const Footer = () => {
         </ul>
         <ul>
           <li>
-            <Link to={'https://www.instagram.com'} target="_blank">
+            <Link
+              to={'https://www.instagram.com/mpulseignite/'}
+              target="_blank"
+            >
               <AiOutlineInstagram className={styles.socialIcon} />
             </Link>
           </li>
           <li>
-            <Link to={'https://www.instagram.com'} target="_blank">
+            <Link
+              to={'https://www.instagram.com/mpulseignite/'}
+              target="_blank"
+            >
               <FaLinkedinIn className={styles.socialIcon} />
             </Link>
           </li>
           <li>
-            <Link to={'https://www.instagram.com'} target="_blank">
+            <Link
+              to={'https://www.instagram.com/mpulseignite/'}
+              target="_blank"
+            >
               <AiOutlineYoutube className={styles.socialIcon} />
             </Link>
           </li>

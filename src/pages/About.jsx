@@ -1,9 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import styles from '../styles/pages/About.module.css';
 
 const About = () => {
   return (
     <div className={styles.about}>
+      <Helmet>
+        <title>Mpulse IngITe 2023 | About</title>
+      </Helmet>
+
       <img src="/ignite-logo.png" alt="ignite-logo" />
 
       <h1>About Us</h1>

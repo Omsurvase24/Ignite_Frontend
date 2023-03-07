@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import EventCard from '../components/event/EventCard';
 import EventPopup from '../components/event/EventPopup';
 import styles from '../styles/pages/Events.module.css';
@@ -8,6 +9,10 @@ const Events = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className={styles.events}>
+      <Helmet>
+        <title>Mpulse IngITe 2023 | Events</title>
+      </Helmet>
+
       <img src="/ignite-logo.png" alt="ignite-logo" />
 
       <h1>Events</h1>

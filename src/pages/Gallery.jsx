@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import styles from '../styles/pages/Gallery.module.css';
 
 const all = [
@@ -80,6 +81,10 @@ const Gallery = () => {
 
   return (
     <div className={styles.gallery}>
+      <Helmet>
+        <title>Mpulse IngITe 2023 | Gallery</title>
+      </Helmet>
+
       <img src="/ignite-logo.png" alt="ignite-logo" />
 
       <h1>Gallery</h1>

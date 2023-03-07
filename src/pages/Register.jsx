@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import styles from '../styles/pages/Register.module.css';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
   const years = ['1st', '2nd', '3rd', '4th'];
-  const events = ['Bugshodh', 'Design-X', 'Hackathon', 'Mock-Placement'];
+  const events = ['Bug Bounty', 'Design-X', 'Hackathon', 'Mock Placement'];
 
   const [data, setData] = useState({
     first_name: '',
@@ -15,7 +16,7 @@ const Register = () => {
     college_name: '',
     college_department: '',
     current_year: '1st',
-    event_name: 'Bugshodh',
+    event_name: 'Bug Bounty',
     payment_id: '',
     team_members: [],
     teammember1: '',
@@ -79,8 +80,8 @@ const Register = () => {
       notifyError('Please fill all required fields');
       setLoading(false);
     } else if (
-      data.event_name === 'Bugshodh' ||
-      data.event_name === 'Mock-Placement'
+      data.event_name === 'Bug Bounty' ||
+      data.event_name === 'Mock Placement'
     ) {
       const formData = new FormData();
 
@@ -119,7 +120,7 @@ const Register = () => {
           college_name: '',
           college_department: '',
           current_year: '1st',
-          event_name: 'Bugshodh',
+          event_name: 'Bug Bounty',
           payment_id: '',
           team_members: [],
           teammember1: '',
@@ -137,8 +138,8 @@ const Register = () => {
         setLoading(false);
       }
     } else if (
-      data.event_name !== 'Bugshodh' ||
-      data.event_name !== 'Mock-Placement'
+      data.event_name !== 'Bug Bounty' ||
+      data.event_name !== 'Mock Placement'
     ) {
       const formData = new FormData();
 
@@ -187,7 +188,7 @@ const Register = () => {
           college_name: '',
           college_department: '',
           current_year: '1st',
-          event_name: 'Bugshodh',
+          event_name: 'Bug Bounty',
           payment_id: '',
           team_members: [],
           teammember1: '',
@@ -209,6 +210,10 @@ const Register = () => {
 
   return (
     <div className={styles.register}>
+      <Helmet>
+        <title>Mpulse IngITe 2023 | Register</title>
+      </Helmet>
+
       <img src="/ignite-logo.png" alt="ignite-logo" />
       <h1>Event Registration</h1>
       <form onSubmit={onSubmitForm}>

@@ -74,6 +74,8 @@
   }
   .gallery .tabs button {
     font-size: 1rem;
-    padding: 8px 10px;
+    padding: 6px 10px;
+    border-width: 1px;
+    font-weight: 400;
   }
 }

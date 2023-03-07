@@ -4,7 +4,7 @@ import EventPopup from '../components/event/EventPopup';
 import styles from '../styles/pages/Events.module.css';
 
 const Events = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <div className={styles.events}>
       <img src="/ignite-logo.png" alt="ignite-logo" />

@@ -1,0 +1,79 @@
+.gallery {
+  background: #2b2141;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 120px;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+}
+
+.gallery img {
+  width: 150px;
+  margin-top: 50px;
+}
+
+.gallery h1 {
+  color: #fdfdfd;
+  font-size: 300%;
+  font-weight: 600;
+  margin: 20px 10px;
+  text-transform: uppercase;
+}
+
+.gallery .tabs {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery .tabs button {
+  border: 2px solid #0cd1eb;
+  background: transparent;
+  color: #0cd1eb;
+  font-size: 1.1rem;
+  padding: 8px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: 0.5s all ease-in-out;
+  cursor: pointer;
+}
+
+.activeTab {
+  background: #0cd1eb !important;
+  color: #2b2141 !important;
+}
+
+.gallery .imageGallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  margin-top: 30px;
+}
+
+.imageGallery img {
+  width: 350px;
+  height: 270px;
+  object-fit: cover;
+  margin: 10px;
+  transition: 0.5s all ease-in-out;
+}
+
+@media only screen and (max-width: 860px) {
+  .gallery {
+    padding-top: 20px;
+  }
+  .gallery .tabs {
+    margin-top: 15px;
+  }
+  .gallery .tabs button {
+    font-size: 1rem;
+    padding: 8px 10px;
+  }
+}

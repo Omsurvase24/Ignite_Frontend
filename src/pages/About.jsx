@@ -10,7 +10,7 @@ const About = () => {
 
       <div className={styles.row}>
         <img src="/about/bg-mcoe.jpg" alt="college-image" />
-        <div>
+        <div data-aos="fade-left">
           <h4>About IT department</h4>
           <p>
             The Information Technology department of P.E.S's Modern College of
@@ -39,7 +39,7 @@ const About = () => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div data-aos="fade-right">
           <h4>ABOUT MPULSE IGNITE</h4>
           <p>
             IgnITe is a Tech Fest held by IT Department of Modern college. Every
@@ -58,7 +58,7 @@ const About = () => {
             share the experience!
           </p>
         </div>
-        <img src="/ignite-logo.png" alt="ignite-logo" />
+        <img src="/ignite-logo.png" alt="ignite-logo" data-aos="fade-left" />
       </div>
     </div>
   );

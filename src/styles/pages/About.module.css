@@ -6,6 +6,7 @@
   justify-content: center;
   flex-direction: column;
   padding-top: 120px;
+  overflow-x: hidden;
 }
 
 .about img {

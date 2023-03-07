@@ -41,7 +41,7 @@ const Navbar = () => {
           <Link to="/sponsors">Sponsors</Link>
         </li>
         <li onClick={() => setOpen(false)}>
-          <Link to="/sponsors">Gallery</Link>
+          <Link to="/gallery">Gallery</Link>
         </li>
       </ul>
     </nav>

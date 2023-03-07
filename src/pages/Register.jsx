@@ -218,7 +218,6 @@ const Register = () => {
               type="text"
               id="firstname"
               className={styles.formcontrol}
-              autocomplete="off"
               required
               value={data.first_name}
               onChange={(e) => setData({ ...data, first_name: e.target.value })}
@@ -232,7 +231,6 @@ const Register = () => {
               type="text"
               id="lastname"
               className={styles.formcontrol}
-              autocomplete="off"
               required
               value={data.last_name}
               onChange={(e) => setData({ ...data, last_name: e.target.value })}
@@ -248,7 +246,6 @@ const Register = () => {
               type="text"
               id="email"
               className={styles.formcontrol}
-              autocomplete="off"
               required
               value={data.email}
               onChange={(e) => setData({ ...data, email: e.target.value })}
@@ -262,7 +259,6 @@ const Register = () => {
               type="text"
               id="contact"
               className={styles.formcontrol}
-              autocomplete="off"
               required
               value={data.contact}
               onChange={(e) => setData({ ...data, contact: e.target.value })}
@@ -278,7 +274,6 @@ const Register = () => {
               type="text"
               id="collegename"
               className={styles.formcontrol}
-              autocomplete="off"
               required
               value={data.college_name}
               onChange={(e) =>
@@ -296,7 +291,6 @@ const Register = () => {
               type="text"
               id="department"
               className={styles.formcontrol}
-              autocomplete="off"
               required
               value={data.college_department}
               onChange={(e) =>
@@ -339,7 +333,6 @@ const Register = () => {
                   type="text"
                   id="teammember1"
                   className={styles.formcontrol}
-                  autocomplete="off"
                   required
                   onChange={(e) =>
                     setData({ ...data, teammember1: e.target.value })
@@ -356,7 +349,6 @@ const Register = () => {
                   type="text"
                   id="teammember2"
                   className={styles.formcontrol}
-                  autocomplete="off"
                   required
                   onChange={(e) =>
                     setData({ ...data, teammember2: e.target.value })
@@ -373,7 +365,6 @@ const Register = () => {
                   type="text"
                   id="teammember3"
                   className={styles.formcontrol}
-                  autocomplete="off"
                   required
                   onChange={(e) =>
                     setData({ ...data, teammember3: e.target.value })
@@ -392,7 +383,6 @@ const Register = () => {
               type="text"
               id="paymentid"
               className={styles.formcontrol}
-              autocomplete="off"
               required
               value={data.payment_id}
               onChange={(e) => setData({ ...data, payment_id: e.target.value })}

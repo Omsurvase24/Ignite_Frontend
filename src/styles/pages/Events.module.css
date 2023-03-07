@@ -6,6 +6,8 @@
   justify-content: center;
   flex-direction: column;
   padding-top: 120px;
+  padding-bottom: 30px;
+  overflow-x: hidden;
 }
 
 .events img {
@@ -31,40 +33,49 @@
 
 /* Event */
 .event {
-  background: #fdfdfd;
   padding: 30px;
   height: 300px;
   width: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 10px solid #2c233eea;
   flex-direction: column;
   margin: 20px;
   position: relative;
   cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px 2px #41355a9b;
+  -moz-box-shadow: 0px 0px 15px 2px #41355a9b;
+  box-shadow: 0px 0px 15px 2px #41355a9b;
+  border-radius: 10px;
+  transition: 0.3s all ease-in-out;
 }
 
 .event:hover {
-  background: #fdfdfd;
+  transform: scale(1.03);
 }
 
 .event img {
-  width: 150px;
+  width: 100px;
+  filter: brightness(0) invert(1);
 }
 
 .event h4 {
-  color: #41355a;
-  font-size: 1.5rem;
+  color: #fdfdfd;
+  font-size: 1.3rem;
+  font-weight: 500;
   text-align: center;
   margin-top: 25px;
 }
 
 .event p {
-  color: #ff6347;
+  color: #2b2141;
   font-weight: 600;
   text-transform: uppercase;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 14px;
+  background: #0cd1eb;
+  padding: 8px 10px;
+  border-radius: 4px;
 }
 
 /* Popup */

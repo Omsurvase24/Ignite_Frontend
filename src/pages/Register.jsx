@@ -212,144 +212,197 @@ const Register = () => {
       <img src="/ignite-logo.png" alt="ignite-logo" />
       <h1>Event Registration</h1>
       <form onSubmit={onSubmitForm}>
-        <div className={styles.input}>
-          <input
-            type="text"
-            id="firstname"
-            value={data.first_name}
-            onChange={(e) => setData({ ...data, first_name: e.target.value })}
-          />
-          <label htmlFor="firstname">
-            First name <span>*</span>
-          </label>
-        </div>
-        <div className={styles.input}>
-          <input
-            type="text"
-            id="lastname"
-            value={data.last_name}
-            onChange={(e) => setData({ ...data, last_name: e.target.value })}
-          />
-          <label htmlFor="lastname">
-            Last name <span>*</span>
-          </label>
-        </div>
-        <div className={styles.input}>
-          <input
-            type="email"
-            id="email"
-            value={data.email}
-            onChange={(e) => setData({ ...data, email: e.target.value })}
-          />
-          <label htmlFor="email">
-            Email <span>*</span>
-          </label>
-        </div>
-        <div className={styles.input}>
-          <input
-            type="text"
-            id="contact"
-            value={data.contact}
-            onChange={(e) => setData({ ...data, contact: e.target.value })}
-          />
-          <label htmlFor="contact">
-            Contact number <span>*</span>
-          </label>
-        </div>
-        <div className={styles.input}>
-          <input
-            type="text"
-            id="collegename"
-            value={data.college_name}
-            onChange={(e) => setData({ ...data, college_name: e.target.value })}
-          />
-          <label htmlFor="collegename">
-            College name <span>*</span>
-          </label>
-        </div>
-        <div className={styles.input}>
-          <input
-            type="text"
-            id="department"
-            value={data.college_department}
-            onChange={(e) =>
-              setData({ ...data, college_department: e.target.value })
-            }
-          />
-          <label htmlFor="department">
-            Department <span>*</span>
-          </label>
-        </div>
-        <div className={styles.input}>
-          <select onChange={onYearChange}>
-            {years.map((year) => (
-              <option key={year}>{year}</option>
-            ))}
-          </select>
-          <label htmlFor="year">
-            Year <span>*</span>
-          </label>
-        </div>
-        <div className={styles.input}>
-          <select onChange={onEventChange}>
-            {events.map((event) => (
-              <option key={event}>{event}</option>
-            ))}
-            <label htmlFor="eventname">
-              Event <span>*</span>
+        <div className={styles.row}>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="firstname"
+              className={styles.formcontrol}
+              autocomplete="off"
+              required
+              value={data.first_name}
+              onChange={(e) => setData({ ...data, first_name: e.target.value })}
+            />
+            <label htmlFor="firstname" className={styles.floatinglabel}>
+              First name <span>*</span>
             </label>
-          </select>
-          <label htmlFor="eventname">
-            Select Event Name <span>*</span>
-          </label>
+          </div>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="lastname"
+              className={styles.formcontrol}
+              autocomplete="off"
+              required
+              value={data.last_name}
+              onChange={(e) => setData({ ...data, last_name: e.target.value })}
+            />
+            <label htmlFor="lastname" className={styles.floatinglabel}>
+              Last name <span>*</span>
+            </label>
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="email"
+              className={styles.formcontrol}
+              autocomplete="off"
+              required
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+            />
+            <label className={styles.floatinglabel} htmlFor="email">
+              Email <span>*</span>
+            </label>
+          </div>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="contact"
+              className={styles.formcontrol}
+              autocomplete="off"
+              required
+              value={data.contact}
+              onChange={(e) => setData({ ...data, contact: e.target.value })}
+            />
+            <label className={styles.floatinglabel} htmlFor="contact">
+              Contact number <span>*</span>
+            </label>
+          </div>
+        </div>
+        <div className={styles.row1}>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="collegename"
+              className={styles.formcontrol}
+              autocomplete="off"
+              required
+              value={data.college_name}
+              onChange={(e) =>
+                setData({ ...data, college_name: e.target.value })
+              }
+            />
+            <label className={styles.floatinglabel} htmlFor="collegename">
+              College name <span>*</span>
+            </label>
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="department"
+              className={styles.formcontrol}
+              autocomplete="off"
+              required
+              value={data.college_department}
+              onChange={(e) =>
+                setData({ ...data, college_department: e.target.value })
+              }
+            />
+            <label className={styles.floatinglabel} htmlFor="department">
+              Department <span>*</span>
+            </label>
+          </div>
+          <div className={styles.floatinglabelgroup}>
+            <label className={styles.floatinglabelselect} htmlFor="year">
+              Year <span>*</span>
+            </label>
+            <select onChange={onYearChange}>
+              {years.map((year) => (
+                <option key={year}>{year}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className={styles.row1}>
+          <div className={styles.floatinglabelgroup}>
+            <label className={styles.floatinglabelselect} htmlFor="eventname">
+              Select Event Name <span>*</span>
+            </label>
+            <select onChange={onEventChange}>
+              {events.map((event) => (
+                <option key={event}>{event}</option>
+              ))}
+            </select>
+          </div>
         </div>
         {(data.event_name === 'Hackathon' ||
           data.event_name === 'Design-X') && (
           <>
-            <div className={styles.input}>
-              <input
-                type="text"
-                id="teammember1"
-                onChange={(e) =>
-                  setData({ ...data, teammember1: e.target.value })
-                }
-              />
-              <label htmlFor="teammember1">Team member</label>
+            <div className={styles.row1}>
+              <div className={styles.floatinglabelgroup}>
+                <input
+                  type="text"
+                  id="teammember1"
+                  className={styles.formcontrol}
+                  autocomplete="off"
+                  required
+                  onChange={(e) =>
+                    setData({ ...data, teammember1: e.target.value })
+                  }
+                />
+                <label className={styles.floatinglabel} htmlFor="teammember1">
+                  Team member
+                </label>
+              </div>
             </div>
-            <div className={styles.input}>
-              <input
-                type="text"
-                id="teammember2"
-                onChange={(e) =>
-                  setData({ ...data, teammember2: e.target.value })
-                }
-              />
-              <label htmlFor="teammember2">Team member</label>
+            <div className={styles.row1}>
+              <div className={styles.floatinglabelgroup}>
+                <input
+                  type="text"
+                  id="teammember2"
+                  className={styles.formcontrol}
+                  autocomplete="off"
+                  required
+                  onChange={(e) =>
+                    setData({ ...data, teammember2: e.target.value })
+                  }
+                />
+                <label className={styles.floatinglabel} htmlFor="teammember2">
+                  Team member
+                </label>
+              </div>
             </div>
-            <div className={styles.input}>
-              <input
-                type="text"
-                id="teammember3"
-                onChange={(e) =>
-                  setData({ ...data, teammember3: e.target.value })
-                }
-              />
-              <label htmlFor="teammember3">Team member</label>
+            <div className={styles.row1}>
+              <div className={styles.floatinglabelgroup}>
+                <input
+                  type="text"
+                  id="teammember3"
+                  className={styles.formcontrol}
+                  autocomplete="off"
+                  required
+                  onChange={(e) =>
+                    setData({ ...data, teammember3: e.target.value })
+                  }
+                />
+                <label className={styles.floatinglabel} htmlFor="teammember3">
+                  Team member
+                </label>
+              </div>
             </div>
           </>
         )}
-        <div className={styles.input}>
-          <input
-            type="text"
-            id="paymentid"
-            value={data.payment_id}
-            onChange={(e) => setData({ ...data, payment_id: e.target.value })}
-          />
-          <label htmlFor="paymentid">
-            Payment ID <span>*</span>
-          </label>
+        <div className={styles.row1}>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="paymentid"
+              className={styles.formcontrol}
+              autocomplete="off"
+              required
+              value={data.payment_id}
+              onChange={(e) => setData({ ...data, payment_id: e.target.value })}
+            />
+            <label className={styles.floatinglabel} htmlFor="paymentid">
+              Payment ID <span>*</span>
+            </label>
+          </div>
         </div>
-        <div className={styles.input}>
+        <div className={styles.floatinglabelgroup}>
           <input
             type="file"
             id="paymentscreenshot"
@@ -357,7 +410,7 @@ const Register = () => {
               setData({ ...data, payment_screenshot: e.target.files[0] })
             }
           />
-          <label htmlFor="paymentscreenshot">
+          <label className={styles.floatinglabel} htmlFor="paymentscreenshot">
             Payment screenshot <span>*</span>
           </label>
         </div>

@@ -23,61 +23,106 @@
 
 .register form {
   width: 500px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
-.register form .input {
+.register form .row {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-bottom: 30px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.input label {
-  position: absolute;
-  left: 10px;
-  top: -10px;
-  background: #2b2141;
-  padding: 0px 5px;
-  font-size: 15px;
-  color: #fdfdfd;
-  transition: 0.5s;
-  text-transform: capitalize;
+.register form .row,
+.register form .row1 {
+  margin-bottom: 20px;
 }
 
-.input span {
-  color: red;
-  font-size: 16px;
-}
-
-.input input,
-.input select {
-  border: 2px solid #fdfdfd;
-  background: transparent;
-  border-radius: 5px;
-  outline: none;
-  padding: 12px 10px;
-  font-size: 18px;
-  color: #fdfdfd;
-}
-
-.input select option {
-  color: #2b2141;
+.register form .row input,
+.register form .row select {
+  width: 242px;
 }
 
 .register button {
   background: #0cd1eb;
-  border-color: #0cd1eb;
+  border: 1px solid #0cd1eb;
   color: #2b2141;
   width: 100%;
+  margin-top: 15px;
   padding: 12px 10px;
-  font-weight: 600;
-  font-size: 1.2rem;
-  border: none;
+  font-weight: 500;
+  font-size: 1.1rem;
   border-radius: 5px;
   cursor: pointer;
+  outline: none;
+  transition: 0.5s all ease-in-out;
 }
 
+.register button:hover {
+  background: transparent;
+  border-color: #fdfdfd;
+  color: #fdfdfd;
+}
+
+/*  */
+.floatinglabelgroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* margin-top: 15px; */
+}
+
+.floatinglabelgroup input,
+.floatinglabelgroup select {
+  border: none;
+  background: #3f315f;
+  border-radius: 5px;
+  outline: none;
+  padding: 12px 10px;
+  font-size: 16px;
+  color: #fdfdfd;
+}
+
+.floatinglabelgroup input::file-selector-button {
+  background: #2b2141;
+  border: none;
+  font-size: 12px;
+  color: #fdfdfd;
+  font-family: 'Montserrat', sans-serif;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.floatinglabel {
+  position: absolute;
+  pointer-events: none;
+  top: 14px;
+  left: 12px;
+  transition: all 0.1s ease;
+  font-size: 15px;
+  color: #fdfdfd;
+  height: 10px;
+}
+
+.floatinglabelselect {
+  position: absolute;
+  top: -9px;
+  left: 0px;
+  font-size: 14px;
+  opacity: 1;
+  color: #0cd1eb;
+  margin-left: 10px;
+}
+
+.floatinglabelgroup input:focus ~ .floatinglabel,
+.floatinglabelgroup input:not(:focus):valid ~ .floatinglabel {
+  top: -8px;
+  bottom: 0px;
+  font-size: 14px;
+  opacity: 1;
+  color: #0cd1eb;
+}
+
+/*  */
 @media only screen and (max-width: 900px) {
   .register {
     padding-top: 50px;
@@ -95,5 +140,28 @@
 
   .register {
     padding: 50px 20px;
+  }
+
+  .register form .row {
+    display: block;
+  }
+
+  .register form .row,
+  .register form .row1 {
+    margin-bottom: 0px;
+  }
+
+  .register form .row input,
+  .register form .row select {
+    width: 100%;
+  }
+
+  .register form input,
+  .register form select {
+    margin-bottom: 15px;
+  }
+
+  .register button {
+    margin-top: 0px;
   }
 }

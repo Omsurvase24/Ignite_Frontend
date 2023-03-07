@@ -1,2 +1,48 @@
 .sponsors {
+  background: #2b2141;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 120px;
+}
+
+.floatinglabelgroup {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.floatinglabelgroup input {
+  border: 2px solid #fdfdfd;
+  background: transparent;
+  border-radius: 5px;
+  outline: none;
+  padding: 12px 10px;
+  font-size: 18px;
+  color: #fdfdfd;
+}
+
+.floatinglabel {
+  position: absolute;
+  pointer-events: none;
+  top: 15px;
+  left: 12px;
+  transition: all 0.1s ease;
+  font-size: 15px;
+  color: #fdfdfd;
+  background: #2b2141;
+  height: 10px;
+}
+
+.floatinglabelgroup input:focus ~ .floatinglabel,
+.floatinglabelgroup input:not(:focus):valid ~ .floatinglabel {
+  top: -8px;
+  bottom: 0px;
+  left: 0px;
+  font-size: 15px;
+  opacity: 1;
+  color: #fdfdfd;
+  margin-left: 10px;
 }

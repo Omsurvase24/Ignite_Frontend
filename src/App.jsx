@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home';
@@ -11,7 +11,14 @@ import Register from './pages/Register';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const App = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Router>
       <Layout>

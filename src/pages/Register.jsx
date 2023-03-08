@@ -389,7 +389,6 @@ const Register = () => {
                   type="text"
                   id="teammember1"
                   className={styles.formcontrol}
-                  required
                   onChange={(e) =>
                     setData({ ...data, teammember1: e.target.value })
                   }
@@ -405,7 +404,6 @@ const Register = () => {
                   type="text"
                   id="teammember2"
                   className={styles.formcontrol}
-                  required
                   onChange={(e) =>
                     setData({ ...data, teammember2: e.target.value })
                   }
@@ -421,7 +419,6 @@ const Register = () => {
                   type="text"
                   id="teammember3"
                   className={styles.formcontrol}
-                  required
                   onChange={(e) =>
                     setData({ ...data, teammember3: e.target.value })
                   }

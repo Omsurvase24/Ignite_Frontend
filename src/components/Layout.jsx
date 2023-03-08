@@ -12,9 +12,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {!pathname.includes('treasurer') && <Navbar />}
+      {!pathname.includes('treasurer') && !pathname.includes('quiz') && (
+        <Navbar />
+      )}
       {children}
-      {pathname !== '/' && !pathname.includes('treasurer') && <Footer />}
+      {pathname !== '/' &&
+        !pathname.includes('treasurer') &&
+        !pathname.includes('quiz') && <Footer />}
     </>
   );
 };

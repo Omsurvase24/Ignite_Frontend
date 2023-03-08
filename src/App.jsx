@@ -19,6 +19,8 @@ import Dashboard from './pages/admin/Dashboard';
 import TreasurerLogin from './pages/treasurer/TreasurerLogin';
 import TreasurerDashboard from './pages/treasurer/TreasurerDashboard';
 import NotFound from './pages/NotFound';
+import Quiz from './pages/quiz/Quiz';
+import QuizSignup from './pages/quiz/QuizSignup';
 
 const App = () => {
   useEffect(() => {
@@ -37,6 +39,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/treasurer" element={<TreasurerLogin />} />
           <Route path="/treasurer/dashboard" element={<TreasurerDashboard />} />
+          <Route path="/quiz/:category" element={<QuizSignup />} />
+          <Route path="/quiz/:category/start" element={<Quiz />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer />

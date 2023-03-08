@@ -9,7 +9,7 @@ const About = () => {
         <title>Mpulse IngITe 2023 | About</title>
       </Helmet>
 
-      <img src="/ignite-logo.png" alt="ignite-logo" />
+      {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}
 
       <h1>About Us</h1>
 

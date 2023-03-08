@@ -10,11 +10,6 @@
   overflow-x: hidden;
 }
 
-.events img {
-  width: 150px;
-  margin-top: 50px;
-}
-
 .events h1 {
   color: #fdfdfd;
   font-size: 300%;
@@ -33,49 +28,90 @@
 
 /* Event */
 .event {
-  padding: 30px;
-  height: 300px;
-  width: 300px;
+  padding: 1em 0;
+  float: left;
+  width: 250px;
+  height: 250px;
+  background: #3f315f;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin: 20px;
   position: relative;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 15px 2px #41355a9b;
-  -moz-box-shadow: 0px 0px 15px 2px #41355a9b;
-  box-shadow: 0px 0px 15px 2px #41355a9b;
+  padding: 20px;
+  margin: 20px;
   border-radius: 10px;
-  transition: 0.3s all ease-in-out;
 }
 
-.event:hover {
-  transform: scale(1.03);
+.event .content {
+  overflow: hidden;
 }
 
-.event img {
-  width: 100px;
-  filter: brightness(0) invert(1);
+.event .contentOverlay {
+  border-radius: 10px;
+  background: #0c10eb53;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
 }
 
-.event h4 {
+.content:hover .contentOverlay {
+  opacity: 1;
+}
+
+.content img {
+  width: 100%;
+  height: 100%;
+}
+
+.content .contentDetails {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .contentDetails {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.contentFadeIn {
+  top: 80%;
+}
+
+.content h4 {
   color: #fdfdfd;
+  margin-bottom: 10px;
   font-size: 1.3rem;
   font-weight: 500;
-  text-align: center;
-  margin-top: 25px;
 }
 
-.event p {
-  color: #2b2141;
+.content button {
+  background: #fdfdfd;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
   font-weight: 600;
-  text-transform: uppercase;
-  margin-top: 15px;
-  font-size: 14px;
-  background: #0cd1eb;
-  padding: 8px 10px;
-  border-radius: 4px;
 }
 
 /* Popup */
@@ -289,3 +325,5 @@
     font-size: 40px;
   }
 }
+
+/* overlay */

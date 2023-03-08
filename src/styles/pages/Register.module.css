@@ -9,10 +9,6 @@
   padding-bottom: 50px;
 }
 
-.register img {
-  width: 150px;
-}
-
 .register h1 {
   color: #fdfdfd;
   font-size: 2.5rem;
@@ -122,6 +118,24 @@
   color: #0cd1eb;
 }
 
+.register p {
+  color: #0cd1eb;
+  text-align: center;
+  margin: 20px 0px 10px;
+  font-weight: 500;
+}
+
+.register .qr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register .qr img {
+  width: 200px;
+  margin: 10px 0px;
+}
+
 /*  */
 @media only screen and (max-width: 900px) {
   .register {
@@ -163,6 +177,10 @@
 
   .register button {
     margin-top: 0px;
+  }
+
+  .register .qr img {
+    margin-bottom: 20px;
   }
 }
 

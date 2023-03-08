@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import styles from '../styles/pages/Register.module.css';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+
+const qrs = {
+  50: '/qrs/50rs.png',
+  100: '/qrs/100rs.png',
+  150: '/qrs/150rs.png',
+  200: '/qrs/200rs.png',
+  300: '/qrs/300rs.png',
+  450: '/qrs/450rs.png',
+  600: '/qrs/600rs.png',
+};
 
 const Register = () => {
   const years = ['1st', '2nd', '3rd', '4th'];
@@ -26,7 +36,42 @@ const Register = () => {
     payment_screenshot: '',
   });
 
+  const [fees, setFees] = useState(0);
+
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (
+      data.event_name === 'Bug Bounty' ||
+      data.event_name === 'Mock Placement'
+    ) {
+      setFees(50);
+    } else if (data.event_name === 'Hackathon') {
+      let fee = 150;
+      if (data.teammember1.length > 0) {
+        fee += 150;
+      }
+      if (data.teammember2.length > 0) {
+        fee += 150;
+      }
+      if (data.teammember3.length > 0) {
+        fee += 150;
+      }
+      setFees(fee);
+    } else if (data.event_name === 'Design-X') {
+      let fee = 50;
+      if (data.teammember1.length > 0) {
+        fee += 50;
+      }
+      if (data.teammember2.length > 0) {
+        fee += 50;
+      }
+      if (data.teammember3.length > 0) {
+        fee += 50;
+      }
+      setFees(fee);
+    }
+  }, [data]);
 
   const onYearChange = (e) => {
     setData({ ...data, current_year: e.target.value });
@@ -34,7 +79,13 @@ const Register = () => {
 
   const onEventChange = (e) => {
     const _event = e.target.value;
-    setData({ ...data, event_name: _event });
+    setData({
+      ...data,
+      event_name: _event,
+      teammember1: '',
+      teammember2: '',
+      teammember3: '',
+    });
   };
 
   const notifyError = (message) => {
@@ -214,7 +265,7 @@ const Register = () => {
         <title>Mpulse IngITe 2023 | Register</title>
       </Helmet>
 
-      <img src="/ignite-logo.png" alt="ignite-logo" />
+      {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}
       <h1>Event Registration</h1>
       <form onSubmit={onSubmitForm}>
         <div className={styles.row}>
@@ -408,6 +459,12 @@ const Register = () => {
           <label className={styles.floatinglabel} htmlFor="paymentscreenshot">
             Payment screenshot <span>*</span>
           </label>
+        </div>
+        <p>
+          Please pay Rs. {fees} for {data.event_name} on below QR
+        </p>
+        <div className={styles.qr}>
+          <img src={qrs[fees]} alt={`${fees}-qr`} />
         </div>
         <button>{loading ? 'Submitting...' : 'Submit'}</button>
       </form>

@@ -85,7 +85,7 @@ const Gallery = () => {
         <title>Mpulse IngITe 2023 | Gallery</title>
       </Helmet>
 
-      <img src="/ignite-logo.png" alt="ignite-logo" />
+      {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}
 
       <h1>Gallery</h1>
 

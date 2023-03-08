@@ -10,14 +10,26 @@ const EventCard = ({ image, title, open, setOpen, data }) => {
   return (
     <div
       className={styles.event}
-      data-aos="zoom-in"
       onClick={() => {
         setOpen(true);
         dispatch(setPopupData(data));
       }}
     >
-      <img src={image} alt={title} />
-      <h4>{title}</h4>
+      <div className={styles.content}>
+        <div className={styles.contentOverlay}></div>
+        <img src={image} alt={title} />
+        <div className={`${styles.contentDetails} ${styles.contentFadeIn}`}>
+          <h4>{data.title}</h4>
+          <button
+            onClick={() => {
+              setOpen(true);
+              dispatch(setPopupData(data));
+            }}
+          >
+            View More
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

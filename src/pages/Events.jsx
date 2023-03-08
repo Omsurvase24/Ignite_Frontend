@@ -13,7 +13,7 @@ const Events = () => {
         <title>Mpulse IngITe 2023 | Events</title>
       </Helmet>
 
-      <img src="/ignite-logo.png" alt="ignite-logo" />
+      {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}
 
       <h1>Events</h1>
 

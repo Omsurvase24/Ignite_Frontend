@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
-import Home from '../pages/Home';
 
 export const ParticleBackground = () => {
   const particlesInit = useCallback(async (engine) => {

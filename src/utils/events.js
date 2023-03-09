@@ -1,47 +1,5 @@
 const data = [
   {
-    id: 1,
-    title: 'Design X',
-    image: '/events/designX.png',
-    data: [
-      {
-        intro: [
-          'introduction paragraph 1',
-          '100 INR(Rs.50 each) fees structure',
-        ],
-        rules: ['rule1', 'rule2', 'rule3', 'rule4', 'rule5', 'rule6'],
-        rounds: [
-          {
-            roundNo: 1,
-            roundName: '1 st round name here',
-            roundDesc: [
-              'description1',
-              'description2',
-              'description3',
-              'description4',
-            ],
-          },
-          {
-            roundNo: 2,
-            roundName: '2nd round name here',
-            roundDesc: ['description1', 'description2', 'description3'],
-          },
-          {
-            roundNo: 3,
-            roundName: '3rd round name here',
-            roundDesc: [
-              'description1',
-              'description2',
-              'description3',
-              'description4',
-              'description5',
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
     id: 2,
     title: 'Hackathon',
     image: '/events/hackathon.png',
@@ -90,6 +48,48 @@ const data = [
             roundName: 'HR Interview',
             roundDesc: [
               'It will be final round and based on the performance candidates will be selected for the internship or letter of appreciation.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: 'Design X',
+    image: '/events/designx.png',
+    data: [
+      {
+        intro: [
+          'introduction paragraph 1',
+          '100 INR(Rs.50 each) fees structure',
+        ],
+        rules: ['rule1', 'rule2', 'rule3', 'rule4', 'rule5', 'rule6'],
+        rounds: [
+          {
+            roundNo: 1,
+            roundName: '1 st round name here',
+            roundDesc: [
+              'description1',
+              'description2',
+              'description3',
+              'description4',
+            ],
+          },
+          {
+            roundNo: 2,
+            roundName: '2nd round name here',
+            roundDesc: ['description1', 'description2', 'description3'],
+          },
+          {
+            roundNo: 3,
+            roundName: '3rd round name here',
+            roundDesc: [
+              'description1',
+              'description2',
+              'description3',
+              'description4',
+              'description5',
             ],
           },
         ],

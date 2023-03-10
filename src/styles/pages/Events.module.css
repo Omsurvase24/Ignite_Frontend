@@ -49,7 +49,8 @@
 
 .event .contentOverlay {
   border-radius: 10px;
-  background: #2b2141;
+  border-color: #3f315f;
+  background: #3f315f;
   position: absolute;
   height: 100%;
   width: 100%;

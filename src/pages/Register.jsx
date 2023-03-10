@@ -152,6 +152,7 @@ const Register = () => {
       formData.append('payment_screenshot', data.payment_screenshot);
 
       try {
+        console.log(`${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`);
         const response = await axios.post(
           `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`,
           formData,
@@ -413,21 +414,23 @@ const Register = () => {
                 </label>
               </div>
             </div>
-            <div className={styles.row1}>
-              <div className={styles.floatinglabelgroup}>
-                <input
-                  type="text"
-                  id="teammember3"
-                  className={styles.formcontrol}
-                  onChange={(e) =>
-                    setData({ ...data, teammember3: e.target.value })
-                  }
-                />
-                <label className={styles.floatinglabel} htmlFor="teammember3">
-                  Team member
-                </label>
+            {data.event_name !== 'Design-X' && (
+              <div className={styles.row1}>
+                <div className={styles.floatinglabelgroup}>
+                  <input
+                    type="text"
+                    id="teammember3"
+                    className={styles.formcontrol}
+                    onChange={(e) =>
+                      setData({ ...data, teammember3: e.target.value })
+                    }
+                  />
+                  <label className={styles.floatinglabel} htmlFor="teammember3">
+                    Team member
+                  </label>
+                </div>
               </div>
-            </div>
+            )}
           </>
         )}
         <div className={styles.row1}>

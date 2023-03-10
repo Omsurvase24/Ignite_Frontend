@@ -51,7 +51,7 @@ const TreasurerDashboard = () => {
           {
             headers: {
               'Content-Type': 'application/json',
-              jwt_token: data.jwt_token,
+              Authorization: `Bearer ${data.jwt_token}`,
             },
           }
         );
@@ -72,7 +72,7 @@ const TreasurerDashboard = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            jwt_token: data.jwt_token,
+            Authorization: `Bearer ${data.jwt_token}`,
           },
         }
       );
@@ -91,7 +91,7 @@ const TreasurerDashboard = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            jwt_token: data.jwt_token,
+            Authorization: `Bearer ${data.jwt_token}`,
           },
         }
       );
@@ -113,7 +113,7 @@ const TreasurerDashboard = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            jwt_token: data.jwt_token,
+            Authorization: `Bearer ${data.jwt_token}`,
           },
         }
       );
@@ -151,7 +151,12 @@ const TreasurerDashboard = () => {
             <td>{treasurer.contact}</td>
             <td>{treasurer.event_name}</td>
             <td>{treasurer.payment_id}</td>
-            <td>{treasurer.payment_screenshot_path}</td>
+            <td>
+              <img
+                src={`${process.env.REACT_APP_FLASK_BACKEND}/static${treasurer.payment_screenshot_path}`}
+                alt=""
+              />
+            </td>
             <td>
               <button
                 className={styles.accept}

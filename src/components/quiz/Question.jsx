@@ -10,8 +10,6 @@ const Question = ({ quiz, index }) => {
   const { data, answers } = useSelector((store) => store.quiz);
 
   const handleSelectAnswer = async (option) => {
-    dispatch(setOption({ index, option }));
-
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_NODE_BACKEND}/apinode/quiz/submit-quiz/${data.category}`,
@@ -19,7 +17,8 @@ const Question = ({ quiz, index }) => {
           name: data.team_lead,
           email: data.email,
           contact: data.contact,
-          answers: answers,
+          index: index,
+          option: option,
         },
         {
           headers: {
@@ -27,8 +26,7 @@ const Question = ({ quiz, index }) => {
           },
         }
       );
-
-      console.log(response.data);
+      dispatch(setOption({ index, option }));
     } catch (error) {
       console.log(error);
     }

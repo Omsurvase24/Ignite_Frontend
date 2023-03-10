@@ -29,6 +29,7 @@ const TreasurerLogin = () => {
         }
       );
 
+      console.log(response.data);
       dispatch(setTreasurer(response.data));
       navigate('/treasurer/dashboard');
     } catch (error) {

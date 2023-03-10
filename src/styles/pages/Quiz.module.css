@@ -75,7 +75,8 @@
   padding: 0px 10px;
 }
 
-.navigation button {
+.navigation button,
+.quizpage .goHome {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +92,71 @@
   transition: 0.3s all ease-in-out;
 }
 
+.quizpage h6 {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 2rem;
+  color: #fdfdfd;
+  background: #ff2b47;
+  padding: 5px 10px;
+  width: 150px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quizpage .goHome {
+  width: 200px;
+}
+
 .navigation button:hover {
   border-color: #0cd1eb;
   color: #0cd1eb;
+}
+
+/* popup */
+.popup {
+  height: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.popup h3 {
+  color: #fdfdfd;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.popup p {
+  text-align: left;
+  color: #fdfdfd;
+  margin-bottom: 0px;
+}
+
+.popup p span {
+  color: #0cd1eb;
+}
+
+.popup .buttons {
+  display: flex;
+  margin-top: 10px;
+}
+
+.popup button {
+  width: fit-content;
+  margin-right: 10px;
+}
+
+.buttons .cancel {
+  background: #ff2b47;
+  border-color: #ff2b47;
+  color: #fdfdfd;
 }

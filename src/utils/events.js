@@ -187,6 +187,37 @@ const data = [
       },
     ],
   },
+  {
+    id: 5,
+    title: 'Escape Room',
+    image: '/events/escaperoom.png',
+    data: [
+      {
+        intro: [
+          'It is a programming event to test the fundamentals of the most popular programming languages of all participants. The rounds will start with the basic concepts and slowly buildup to challenge their programming and logic application skills. This event will help developers to test and re-evaluate their basics and beginners to solidify their concepts. The languages permitted in this event are C++, C, Python.',
+          'Fees structure Rs. 50 (each person)',
+        ],
+        rules: [
+          'Participants must respect the property and facilities of the event venue and not cause any damage or disturbance.',
+          `Cheating, such as stealing another team's chits or hiding chits, is strictly prohibited and will result in disqualification from the event.`,
+          'Each team must follow the designated route and not venture outside of the designated area for the event.',
+          'The organizers reserve the right to disqualify any participant or team for violating the rules or causing disruption to the event.',
+        ],
+        rounds: [
+          {
+            roundNo: 1,
+            roundName: 'Escape Room',
+            roundDesc: [
+              'From the pool of 30 qualified teams, 5 teams will be formed randomly, with 4 players in each team.',
+              'Each team will be given a chit with a clue on it, which will act as a lead to solving the puzzle.',
+              'Volunteers will be placed in each room to provide guidance if necessary and ensure that the rules are followed.',
+              'The team to find all 5 clues and solve the puzzle will be declared the winner of the Treasure Hunt event.',
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export default data;

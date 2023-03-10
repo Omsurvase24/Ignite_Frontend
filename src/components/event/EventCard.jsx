@@ -1,10 +1,9 @@
 import React from 'react';
-import EventPopup from './EventPopup';
 import styles from '../../styles/pages/Events.module.css';
 import { useDispatch } from 'react-redux';
 import { setPopupData } from '../../redux/eventPopupSlice';
 
-const EventCard = ({ image, title, open, setOpen, data }) => {
+const EventCard = ({ image, title, setOpen, data }) => {
   const dispatch = useDispatch();
 
   return (

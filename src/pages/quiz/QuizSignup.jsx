@@ -5,7 +5,9 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { setUser } from '../../redux/quizSlice';
 import { setTreasurer } from '../../redux/treasurerSlice';
+import QuizVertficationPopup from './QuizVertficationPopup';
 import styles from '../../styles/pages/Register.module.css';
+import { setError } from '../../redux/toastSlice';
 
 // http://localhost:3000/quiz/aptitude?name=Bug%20Bounty
 
@@ -22,6 +24,10 @@ const QuizSignup = () => {
   const [loading, setLoading] = useState(false);
 
   const [registrationid, setRegistrationid] = useState('');
+  const [contact, setContact] = useState('');
+
+  const [openVertficationPopup, setOpenVertficationPopup] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
 
   const notifyError = (message) => {
     toast.error(message, {
@@ -52,13 +58,21 @@ const QuizSignup = () => {
         notifyError(`You are not eligible for the ${searchParams.get('name')}`);
         return;
       }
-      navigate(`/quiz/${category}/start`);
-      dispatch(
-        setUser({ ...response.data.message.qr_information, category: category })
-      );
+
+      if (response.data.message.qr_information.contact === contact) {
+        dispatch(
+          setUser({
+            ...response.data.message.qr_information,
+            category: category,
+          })
+        );
+        // open verification popup here
+        setOpenVertficationPopup(true);
+      } else {
+        dispatch(setError('Invalid registration id and contact number'));
+      }
     } catch (error) {
       notifyError('Invalid registration id');
-      setRegistrationid('');
     } finally {
       setLoading(false);
     }
@@ -66,24 +80,48 @@ const QuizSignup = () => {
 
   return (
     <div className={styles.register} style={{ padding: '0px' }}>
+      {openVertficationPopup && (
+        <QuizVertficationPopup
+          setAuthenticated={setAuthenticated}
+          setOpenVertficationPopup={setOpenVertficationPopup}
+        />
+      )}
+
       <h1>
         {category} Quiz&nbsp;{searchParams.get('name')}
       </h1>
       <form onSubmit={handleSubmit}>
-        <div className={styles.floatinglabelgroup}>
-          <input
-            type="text"
-            id="registerid"
-            className={styles.formcontrol}
-            required
-            value={registrationid}
-            onChange={(e) => setRegistrationid(e.target.value)}
-          />
-          <label htmlFor="registerid" className={styles.floatinglabel}>
-            Registration ID <span>*</span>
-          </label>
+        <div className={styles.row1}>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="registerid"
+              className={styles.formcontrol}
+              required
+              value={registrationid}
+              onChange={(e) => setRegistrationid(e.target.value)}
+            />
+            <label htmlFor="registerid" className={styles.floatinglabel}>
+              Registration ID <span>*</span>
+            </label>
+          </div>
         </div>
-        <button disabled={loading}>
+        <div className={styles.row1}>
+          <div className={styles.floatinglabelgroup}>
+            <input
+              type="text"
+              id="contact"
+              className={styles.formcontrol}
+              required
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+            />
+            <label htmlFor="contact" className={styles.floatinglabel}>
+              Contact <span>*</span>
+            </label>
+          </div>
+        </div>
+        <button disabled={loading} style={{ margin: 0 }}>
           {loading ? 'Submiting...' : 'Submit'}
         </button>
       </form>

@@ -3,6 +3,7 @@ import eventPopupReducer from '../redux/eventPopupSlice';
 import treasurerReducer from '../redux/treasurerSlice';
 import quizReducer from '../redux/quizSlice';
 import toastReducer from '../redux/toastSlice';
+import adminReducer from '../redux/adminSlice';
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     treasurer: treasurerReducer,
     quiz: quizReducer,
     toast: toastReducer,
+    admin: adminReducer,
   },
 });

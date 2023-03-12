@@ -55,3 +55,55 @@
   outline: none;
   transition: 0.5s all ease-in-out;
 }
+
+.list .questions {
+  width: 800px;
+}
+
+.list .questions .question {
+  margin: 20px 0px;
+  border: 1px solid #fdfdfd;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.list .questions .question h6 {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fdfdfd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #636363;
+}
+
+.list p {
+  color: #fdfdfd;
+}
+
+.list .delete {
+  background: #ff2247;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.editorButtons button {
+  background: #d9d9d9 !important;
+  color: #fdfdfd !important;
+}
+
+.editor {
+  width: 800px !important;
+  margin-bottom: 30px;
+}
+
+.questionInput {
+  display: block;
+  margin: 10px 0px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 800px;
+  color: #000000;
+  font-weight: 500;
+  outline: none;
+}

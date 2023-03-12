@@ -97,7 +97,7 @@ const Quiz = () => {
         await increaseTime();
       }
       callTimer = true;
-    }, 30000);
+    }, 10000);
     // // // // // // // // //
 
     const getTotalTime = async () => {

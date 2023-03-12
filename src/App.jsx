@@ -23,6 +23,7 @@ import Quiz from './pages/quiz/Quiz';
 import QuizSignup from './pages/quiz/QuizSignup';
 import Submit from './pages/Submit';
 import Attempted from './pages/Attempted';
+import ClearStorage from './pages/ClearStorage';
 
 const App = () => {
   useEffect(() => {
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/quiz/:category/attempted" element={<Attempted />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/clear" element={<ClearStorage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer />

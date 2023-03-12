@@ -37,10 +37,11 @@ const Question = ({ quiz, index }) => {
     <div>
       <div className={styles.quiz}>
         <strong> Q. {index + 1}&nbsp;&#41;</strong>
-        <h4>&nbsp;{quiz?.question}</h4>
+
+        <h4 dangerouslySetInnerHTML={{ __html: quiz.question }}></h4>
 
         {quiz?.options.map((option, idx) => (
-          <p
+          <em
             key={`${index} - ${idx}`}
             className={`${answers[index] === option ? styles.selected : ''}`}
             onClick={() => handleSelectAnswer(option)}
@@ -49,7 +50,7 @@ const Question = ({ quiz, index }) => {
             <span
               className={`${answers[index] === option ? styles.selected : ''}`}
             ></span>
-          </p>
+          </em>
         ))}
       </div>
     </div>

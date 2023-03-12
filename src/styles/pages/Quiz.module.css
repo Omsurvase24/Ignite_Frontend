@@ -6,6 +6,7 @@
   justify-content: center;
   flex-direction: column;
   overflow-x: hidden;
+  padding: 50px 0px;
 }
 
 .quizpage h1 {
@@ -36,16 +37,19 @@
 }
 
 .quiz h4 {
-  color: #fdfdfd;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 25px;
   font-size: 1.1rem;
   margin-bottom: 20px;
   margin-top: 10px;
   text-align: justify;
+  background: #eaeaea;
+  color: #2b2141;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.quiz p {
+.quiz em {
   background: #3c2e5a73;
   margin: 10px 0px;
   padding: 15px 20px;
@@ -57,9 +61,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-style: normal;
 }
 
-.quiz p span {
+.quiz em span {
   height: 16px;
   width: 16px;
   border: 3px solid #514c5a73;
@@ -109,7 +114,7 @@
 }
 
 .quizpage h6 {
-  position: absolute;
+  position: fixed;
   right: 30px;
   top: 20px;
   font-size: 2rem;

@@ -8,7 +8,7 @@ const data = [
         intro: [
           `It is a 9-hour tech hackathon event to develop innovative solutions using technology. Work with like-minded individuals to develop solutions that address real-world problems such as cybersecurity, artificial intelligence, blockchain, and more. The event is open to all college students, and you'll have access to mentors and resources to help you bring your ideas to life. So form a team, and let's use coding for change to make a positive impact on the world!
           `,
-          'Fees structure Rs. 150 (each person)',
+          'Fees structure Rs. 150 (per person)',
         ],
         rules: [
           'Teams: Each team should consist of a minimum of 2 and a maximum of 4 members.',
@@ -24,7 +24,7 @@ const data = [
         rounds: [
           {
             roundNo: 1,
-            roundName: 'Hackathon ',
+            roundName: 'Hackathon',
             roundDesc: [
               'The hackathon is a tech competition where teams of up to 4 members will have 9 hours to build a full-fledged app with a working backend and a decent frontend.',
               'There are no limitations on the technologies used, so participants can use any language, platform, or framework to build their app.',
@@ -52,7 +52,7 @@ const data = [
       {
         intro: [
           'DesignX is a UI-UX designing event where participants can showcase their ideas in design tech. The event will wrap in single round where participants will be given problem statement according to which they to design a prototype/webpage using different tools such as Figma, Canva, Wix or any other open-source tool. The event will help participants to exchange ideas, collaborate on project and gain over more UI/UX design experience.',
-          'Fees structure Rs. 50 (each person)',
+          'Fees structure Rs. 50 (per person)',
         ],
         rules: [
           'Eligibility: The event is open to all individuals and teams who are interested in participation.',
@@ -64,7 +64,7 @@ const data = [
         rounds: [
           {
             roundNo: 1,
-            roundName: '',
+            roundName: 'Design X',
             roundDesc: [
               'All participants have to design UI/UX based prototype using different designing tools.',
               'Participants are free to use Open Browser tools such as Figma, Canva, Wix or any other design tool.',
@@ -87,7 +87,7 @@ const data = [
       {
         intro: [
           'It is a programming event to test the fundamentals of the most popular programming languages of all participants. The rounds will start with the basic concepts and slowly buildup to challenge their programming and logic application skills. This event will help developers to test and re-evaluate their basics and beginners to solidify their concepts. The languages permitted in this event are C++, C, Python.',
-          'Fees structure Rs. 50',
+          'Fees structure Rs. 50 (per person)',
         ],
         rules: [
           'It is Solo event. ',
@@ -118,7 +118,7 @@ const data = [
               'Each participant will be given 7 randomly selected questions which will be consisting of some bugs.',
               'Bugged code will be given you have to edit the bugged line and find the correct output. ',
               'To solve all questions time limit is 35 minutes. ',
-              'On the basis of how many questions are answered correctly, the participant’s performance will be evaluated. ',
+              `On the basis of how many questions are answered correctly, the participant's performance will be evaluated. `,
               'If there is a tie than Time metric will be considered. ',
               'The Languages for the First round are C++, Python. ',
               'Questions will be from all Languages. ',
@@ -194,8 +194,8 @@ const data = [
     data: [
       {
         intro: [
-          'It is a programming event to test the fundamentals of the most popular programming languages of all participants. The rounds will start with the basic concepts and slowly buildup to challenge their programming and logic application skills. This event will help developers to test and re-evaluate their basics and beginners to solidify their concepts. The languages permitted in this event are C++, C, Python.',
-          'Fees structure Rs. 50 (each person)',
+          'An escape room is a type of physical adventure game where players are imprisoned in a themed room and have a set amount of time to solve a series of puzzles and riddles in order to escape. The rooms are created so that you will be in the right environment to address the challenges presented.An escape room may have logic puzzles, hidden objects, ciphers, and physical challenges, among other types of puzzles. Players must utilize their talents of observation and deduction to find the clues because they are frequently concealed within the room. With teams of four individuals, escape rooms are typically played, and the activity is meant to promote communication and teamwork. The riddles require cooperation from the players.',
+          'Fees structure Rs. 50 (per person)',
         ],
         rules: [
           'Participants must respect the property and facilities of the event venue and not cause any damage or disturbance.',

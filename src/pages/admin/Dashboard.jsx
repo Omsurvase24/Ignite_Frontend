@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import treasurerStyles from '../../styles/pages/Treasurer.module.css';
 import styles from '../../styles/pages/Admin.module.css';
 import TestScores from '../../components/admin/TestScores';
@@ -7,9 +7,23 @@ import CalculateScore from '../../components/admin/CalculateScore';
 import AddCategory from '../../components/admin/AddCategory';
 import SeeCategories from '../../components/admin/SeeCategories';
 import ListQuestions from '../../components/admin/ListQuestions';
+import AddQuestion from '../../components/admin/AddQuestion';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const [tab, setTab] = useState('add new category');
+
+  const { data } = useSelector((store) => store.admin);
+
+  useEffect(() => {
+    if (!data) {
+      navigate('/admin');
+    }
+  }, [data]);
+
   return (
     <div className={`${treasurerStyles.treasurer} ${styles.admin}`}>
       <h1>Admin Dashboard</h1>
@@ -59,11 +73,30 @@ const Dashboard = () => {
         </button>
       </div>
 
+      {tab === 'add new category' ? (
+        <AddCategory />
+      ) : tab === 'all categories' ? (
+        <SeeCategories />
+      ) : tab === 'add questions' ? (
+        <AddQuestion />
+      ) : tab === 'see questions' ? (
+        <ListQuestions />
+      ) : tab === 'test entries' ? (
+        <TestEntries />
+      ) : tab === 'see scores' ? (
+        <TestScores />
+      ) : tab === 'calculate scores' ? (
+        <CalculateScore />
+      ) : (
+        <AddCategory />
+      )}
+
       {/* <TestEntries /> */}
       {/* <CalculateScore /> */}
       {/* <AddCategory /> */}
       {/* <SeeCategories /> */}
-      <ListQuestions />
+      {/* <ListQuestions /> */}
+      {/* <AddQuestion /> */}
       {/* <TestScores /> */}
     </div>
   );

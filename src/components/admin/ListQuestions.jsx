@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import convert from 'convert-seconds';
+import { useDispatch } from 'react-redux';
 import styles from '../../styles/pages/Admin.module.css';
+import { setError, setSuccess } from '../../redux/toastSlice';
 
 const options = ['aptitude', 'bugbountyquiz', 'bugbountycode'];
 
 const ListQuestions = () => {
+  const dispatch = useDispatch();
+
   const [state, setState] = useState('aptitude');
 
   const [entries, setEntries] = useState([]);
@@ -15,21 +18,35 @@ const ListQuestions = () => {
     console.log(e.target.value);
   };
 
-  const handleLoad = async () => {
-    setEntries([]);
+  const getQuestions = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_NODE_BACKEND}/apinode/quiz/get-entries/${state}`
+        `${process.env.REACT_APP_NODE_BACKEND}/apinode/category/get-questions/${state}`
       );
 
       setEntries(response.data);
     } catch (error) {
+      dispatch(setError('Error occured while getting questions'));
       console.log(error);
     }
   };
 
+  const handleDelete = async (_id) => {
+    console.log(_id);
+    try {
+      const response = await axios.delete(
+        `${process.env.REACT_APP_NODE_BACKEND}/apinode/quiz/delete-quiz/${state}?id=${_id}`
+      );
+
+      dispatch(setSuccess(response.data.message));
+    } catch (error) {
+      console.log(error);
+      dispatch(setError('Error occured while deleting question'));
+    }
+  };
+
   return (
-    <div>
+    <div className={styles.list}>
       <h3>List Of Questions</h3>
       <div className={styles.options}>
         <select onChange={onEventChange} style={{ marginBottom: 0 }}>
@@ -37,36 +54,32 @@ const ListQuestions = () => {
             <option key={opt}>{opt}</option>
           ))}
         </select>
-        <button onClick={handleLoad}>Load</button>
+        <button onClick={getQuestions}>Load</button>
+        <h4 style={{ color: '#fdfdfd', fontWeight: 500, fontSize: 20 }}>
+          Total: {entries?.length}
+        </h4>
       </div>
 
-      <table border={1}>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Contact</th>
-          <th>Category</th>
-          <th>Submitted</th>
-          <th>Time</th>
-          <th>Score</th>
-        </tr>
-        {entries.map((entry) => (
-          <tr key={entry._id}>
-            <td>{entry.name}</td>
-            <td>{entry.email}</td>
-            <td>{entry.contact}</td>
-            <td>{entry.category}</td>
-            <td>{entry.submitted ? 'Yes' : 'No'}</td>
-            <td>
-              {convert(entry.time).minutes.toString().length === 1 && 0}
-              {convert(entry.time).minutes}:
-              {convert(entry.time).seconds.toString().length === 1 && 0}
-              {convert(entry.time).seconds} mins
-            </td>
-            <td>{entry.score}</td>
-          </tr>
+      <div className={styles.questions}>
+        {entries?.map((entry) => (
+          <div className={styles.question}>
+            <button
+              className={styles.delete}
+              onClick={() => handleDelete(entry._id)}
+            >
+              Delete
+            </button>
+
+            <h6 dangerouslySetInnerHTML={{ __html: entry.question }}></h6>
+
+            {entry.options.map((option) => (
+              <p style={{ color: entry.answer === option && 'red' }}>
+                {option}
+              </p>
+            ))}
+          </div>
         ))}
-      </table>
+      </div>
     </div>
   );
 };

@@ -10,6 +10,8 @@ const Question = ({ quiz, index }) => {
   const { data, answers } = useSelector((store) => store.quiz);
 
   const handleSelectAnswer = async (option) => {
+    dispatch(setOption({ index, option }));
+
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_NODE_BACKEND}/apinode/quiz/submit-quiz/${data.category}`,
@@ -26,7 +28,6 @@ const Question = ({ quiz, index }) => {
           },
         }
       );
-      dispatch(setOption({ index, option }));
     } catch (error) {
       console.log(error);
     }
@@ -35,9 +36,9 @@ const Question = ({ quiz, index }) => {
   return (
     <div>
       <div className={styles.quiz}>
-        <h4>
-          Q. {index + 1} &#41; {quiz?.question}
-        </h4>
+        <strong> Q. {index + 1}&nbsp;&#41;</strong>
+        <h4>&nbsp;{quiz?.question}</h4>
+
         {quiz?.options.map((option, idx) => (
           <p
             key={`${index} - ${idx}`}

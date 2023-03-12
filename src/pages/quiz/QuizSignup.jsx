@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -26,8 +26,26 @@ const QuizSignup = () => {
   const [registrationid, setRegistrationid] = useState('');
   const [contact, setContact] = useState('');
 
+  const [islive, setLive] = useState(false);
+
   const [openVertficationPopup, setOpenVertficationPopup] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const checkLive = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_NODE_BACKEND}/apinode/category/check-live/${category}`
+        );
+
+        setLive(response.data.live);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    checkLive();
+  }, []);
 
   const notifyError = (message) => {
     toast.error(message, {
@@ -87,44 +105,55 @@ const QuizSignup = () => {
         />
       )}
 
-      <h1>
-        {category} Quiz&nbsp;{searchParams.get('name')}
-      </h1>
-      <form onSubmit={handleSubmit}>
-        <div className={styles.row1}>
-          <div className={styles.floatinglabelgroup}>
-            <input
-              type="text"
-              id="registerid"
-              className={styles.formcontrol}
-              required
-              value={registrationid}
-              onChange={(e) => setRegistrationid(e.target.value)}
-            />
-            <label htmlFor="registerid" className={styles.floatinglabel}>
-              Registration ID <span>*</span>
-            </label>
+      {!islive && (
+        <h1>
+          {category} Quiz&nbsp;{searchParams.get('name')} is not live yet.
+        </h1>
+      )}
+
+      {islive && (
+        <h1>
+          {category} Quiz&nbsp;{searchParams.get('name')}
+        </h1>
+      )}
+
+      {islive && (
+        <form onSubmit={handleSubmit}>
+          <div className={styles.row1}>
+            <div className={styles.floatinglabelgroup}>
+              <input
+                type="text"
+                id="registerid"
+                className={styles.formcontrol}
+                required
+                value={registrationid}
+                onChange={(e) => setRegistrationid(e.target.value)}
+              />
+              <label htmlFor="registerid" className={styles.floatinglabel}>
+                Registration ID <span>*</span>
+              </label>
+            </div>
           </div>
-        </div>
-        <div className={styles.row1}>
-          <div className={styles.floatinglabelgroup}>
-            <input
-              type="text"
-              id="contact"
-              className={styles.formcontrol}
-              required
-              value={contact}
-              onChange={(e) => setContact(e.target.value)}
-            />
-            <label htmlFor="contact" className={styles.floatinglabel}>
-              Contact <span>*</span>
-            </label>
+          <div className={styles.row1}>
+            <div className={styles.floatinglabelgroup}>
+              <input
+                type="text"
+                id="contact"
+                className={styles.formcontrol}
+                required
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+              />
+              <label htmlFor="contact" className={styles.floatinglabel}>
+                Contact <span>*</span>
+              </label>
+            </div>
           </div>
-        </div>
-        <button disabled={loading} style={{ margin: 0 }}>
-          {loading ? 'Submiting...' : 'Submit'}
-        </button>
-      </form>
+          <button disabled={loading} style={{ margin: 0 }}>
+            {loading ? 'Submiting...' : 'Submit'}
+          </button>
+        </form>
+      )}
     </div>
   );
 };

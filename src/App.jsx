@@ -21,7 +21,8 @@ import TreasurerDashboard from './pages/treasurer/TreasurerDashboard';
 import NotFound from './pages/NotFound';
 import Quiz from './pages/quiz/Quiz';
 import QuizSignup from './pages/quiz/QuizSignup';
-import Submitted from './pages/Submitted';
+import Submit from './pages/Submit';
+import Attempted from './pages/Attempted';
 
 const App = () => {
   useEffect(() => {
@@ -42,7 +43,10 @@ const App = () => {
           <Route path="/treasurer/dashboard" element={<TreasurerDashboard />} />
           <Route path="/quiz/:category" element={<QuizSignup />} />
           <Route path="/quiz/:category/start" element={<Quiz />} />
-          <Route path="/quiz/:category/end" element={<Submitted />} />
+          <Route path="/quiz/:category/submit" element={<Submit />} />
+          <Route path="/quiz/:category/attempted" element={<Attempted />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer />

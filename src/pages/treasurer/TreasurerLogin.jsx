@@ -4,11 +4,14 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setTreasurer } from '../../redux/treasurerSlice';
 import styles from '../../styles/pages/Register.module.css';
+import { setError } from '../../redux/toastSlice';
 
 const TreasurerLogin = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
 
   const [data, setData] = useState({
     email_address: '',
@@ -17,7 +20,7 @@ const TreasurerLogin = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/login`,
@@ -33,7 +36,10 @@ const TreasurerLogin = () => {
       dispatch(setTreasurer(response.data));
       navigate('/treasurer/dashboard');
     } catch (error) {
+      dispatch(setError(error.response.data.message));
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -71,7 +77,9 @@ const TreasurerLogin = () => {
             Password <span>*</span>
           </label>
         </div>
-        <button>Submit</button>
+        <button disabled={loading}>
+          {loading ? 'Submitting...' : 'Submit'}
+        </button>
       </form>
     </div>
   );

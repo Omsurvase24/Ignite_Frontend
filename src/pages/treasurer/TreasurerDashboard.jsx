@@ -2,15 +2,24 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import styles from '../../styles/pages/Treasurer.module.css';
 import { toast } from 'react-toastify';
+import { FaCloudDownloadAlt } from 'react-icons/fa';
+import styles from '../../styles/pages/Treasurer.module.css';
+
+const options = ['reviewed', 'unreviewed'];
 
 const TreasurerDashboard = () => {
   const navigate = useNavigate();
 
   const { data } = useSelector((state) => state.treasurer);
 
+  const [state, setState] = useState('unreviewed');
+
   const [treasurerData, sertTreasurerData] = useState([]);
+
+  const [reloading, setReloading] = useState(false);
+  const [accept, setAccept] = useState(false);
+  const [decline, setDecline] = useState(false);
 
   const notifyError = (message) => {
     toast.error(message, {
@@ -66,9 +75,10 @@ const TreasurerDashboard = () => {
   }, [data]);
 
   const getData = async () => {
+    setReloading(false);
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/registrations/get/unreviewed`,
+        `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/registrations/get/${state}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -80,10 +90,13 @@ const TreasurerDashboard = () => {
       sertTreasurerData(response.data.unreviewed_registrations);
     } catch (error) {
       console.log(error);
+    } finally {
+      setReloading(false);
     }
   };
 
   const handleAccept = async (id) => {
+    setAccept(true);
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/registrations/review/${id}`,
@@ -102,10 +115,13 @@ const TreasurerDashboard = () => {
         'Error occured while accepting application. Please try again.'
       );
       console.log(error);
+    } finally {
+      setAccept(false);
     }
   };
 
   const handleDecline = async (id) => {
+    setDecline(true);
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/registrations/decline/${id}`,
@@ -122,15 +138,29 @@ const TreasurerDashboard = () => {
     } catch (error) {
       notifyError('Error occured while decline application. Please try again.');
       console.log(error);
+    } finally {
+      setDecline(false);
     }
+  };
+
+  const onEventChange = (e) => {
+    setState(e.target.value);
   };
 
   return (
     <div className={styles.treasurer}>
       <button className={styles.reload} onClick={getData}>
-        Reload
+        <FaCloudDownloadAlt style={{ marginRight: 10 }} />{' '}
+        {reloading ? 'Reloading...' : 'Reload'}
       </button>
       <h1>Trasurer Dashboard</h1>
+
+      <select onChange={onEventChange}>
+        {options.map((opt) => (
+          <option key={opt}>{opt}</option>
+        ))}
+      </select>
+
       <table border={1}>
         <tr>
           <th>ID</th>
@@ -161,13 +191,17 @@ const TreasurerDashboard = () => {
               <button
                 className={styles.accept}
                 onClick={() => handleAccept(treasurer._id)}
+                disabled={accept || state === 'reviewed'}
               >
-                Accpet
+                {accept ? 'Accpeting...' : 'Accpet'}
               </button>
             </td>
             <td>
-              <button onClick={() => handleDecline(treasurer._id)}>
-                Decline
+              <button
+                onClick={() => handleDecline(treasurer._id)}
+                disabled={decline || state === 'reviewed'}
+              >
+                {decline ? 'Declining...' : 'Decline'}
               </button>
             </td>
           </tr>

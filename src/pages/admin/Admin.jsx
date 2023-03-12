@@ -1,44 +1,39 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import styles from '../../styles/pages/Register.module.css';
 
 const Admin = () => {
   const handleLogin = () => {};
   return (
-    <div className={styles.register}>
-      <Helmet>
-        <title>Mpulse IngITe 2023 | Register</title>
-      </Helmet>
-
-      <img src="/ignite-logo.png" alt="ignite-logo" />
-      <h1>Event Registration</h1>
+    <div className={styles.register} style={{ paddingTop: 0 }}>
+      <h1>Admin Login</h1>
       <form onSubmit={handleLogin}>
         <div className={styles.row1}>
           <div className={styles.floatinglabelgroup}>
             <input
               type="text"
-              id="firstname"
+              id="username"
               className={styles.formcontrol}
               required
             />
-            <label htmlFor="firstname" className={styles.floatinglabel}>
-              First name <span>*</span>
+            <label htmlFor="username" className={styles.floatinglabel}>
+              Username <span>*</span>
             </label>
           </div>
         </div>
         <div className={styles.row1}>
           <div className={styles.floatinglabelgroup}>
             <input
-              type="text"
-              id="lastname"
+              type="password"
+              id="password"
               className={styles.formcontrol}
               required
             />
-            <label htmlFor="lastname" className={styles.floatinglabel}>
-              Last name <span>*</span>
+            <label htmlFor="password" className={styles.floatinglabel}>
+              Password<span>*</span>
             </label>
           </div>
         </div>
+        <button style={{ marginTop: 0 }}>Login</button>
       </form>
     </div>
   );

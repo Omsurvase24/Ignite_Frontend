@@ -4,10 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import Question from '../../components/quiz/Question';
 import { setAnswers, setQuiz } from '../../redux/quizSlice';
-import { FaAngleRight, FaAngleLeft, FaBackward, FaClock } from 'react-icons/fa';
+import {
+  FaAngleRight,
+  FaAngleLeft,
+  FaBackward,
+  FaClock,
+  FaHome,
+} from 'react-icons/fa';
 import { setError } from '../../redux/toastSlice';
 import convert from 'convert-seconds';
 import styles from '../../styles/pages/Quiz.module.css';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 //
 //
@@ -51,8 +58,9 @@ const Quiz = () => {
     const increaseTime = async () => {
       console.log('hello');
 
-      if (currentTime >= totalTime - 5) {
+      if (currentTime >= totalTime - 20) {
         handleOnSubmit(true);
+        return;
       }
 
       try {
@@ -89,7 +97,7 @@ const Quiz = () => {
         await increaseTime();
       }
       callTimer = true;
-    }, 5000);
+    }, 30000);
     // // // // // // // // //
 
     const getTotalTime = async () => {
@@ -106,6 +114,28 @@ const Quiz = () => {
     };
 
     const getTime = async () => {
+      // if time present in localstorage then return
+      const tempTime = JSON.parse(localStorage.getItem('time'));
+      if (tempTime) {
+        currentTime = tempTime;
+        setTime(tempTime);
+
+        // start countdown
+        setInterval(() => {
+          setTime((prev) => prev + 1);
+          currentTime += 1;
+
+          if (currentTime >= totalTime) {
+            handleOnSubmit(true);
+            return;
+          }
+
+          localStorage.setItem('time', JSON.stringify(currentTime));
+        }, 1000);
+
+        return;
+      }
+
       try {
         const response = await axios.post(
           `${process.env.REACT_APP_NODE_BACKEND}/apinode/quiz/get-time/${category}`,
@@ -124,13 +154,19 @@ const Quiz = () => {
         if (response.data !== null) {
           console.log('mytime: ', response.data.time);
           setTime(response.data.time);
-          console.log(response.data.time);
 
           currentTime = response.data.time;
           // start countdown
           setInterval(() => {
             setTime((prev) => prev + 1);
             currentTime += 1;
+
+            if (currentTime >= totalTime) {
+              handleOnSubmit(true);
+              return;
+            }
+
+            localStorage.setItem('time', JSON.stringify(currentTime));
           }, 1000);
         }
       } catch (error) {
@@ -139,6 +175,12 @@ const Quiz = () => {
     };
 
     const getAnswers = async () => {
+      // if local storage has already answers then don't fetch answers
+      if (JSON.parse(localStorage.getItem('answers'))) {
+        dispatch(setAnswers(JSON.parse(localStorage.getItem('answers'))));
+        return;
+      }
+
       try {
         const response = await axios.post(
           `${process.env.REACT_APP_NODE_BACKEND}/apinode/quiz/get-answers/${category}`,
@@ -155,6 +197,10 @@ const Quiz = () => {
         );
 
         if (response.data !== null) {
+          localStorage.setItem(
+            'answers',
+            JSON.stringify(response.data.answers)
+          );
           dispatch(setAnswers(response.data.answers));
         }
       } catch (error) {
@@ -177,8 +223,10 @@ const Quiz = () => {
             },
           }
         );
+
+        // set questions
+        localStorage.setItem('quiz', JSON.stringify(response.data));
         dispatch(setQuiz(response.data));
-        dispatch(setAnswers(new Array(response.data.length).fill('')));
 
         // get total time for quiz exam
         getTotalTime();
@@ -187,10 +235,18 @@ const Quiz = () => {
         // get time
         getTime();
       } catch (error) {
-        navigate(`/quiz/${category}/end`);
-        window.location.reload();
+        if (
+          error.response.data.error === 'You have already attempted the quiz.'
+        ) {
+          navigate(`/quiz/${category}/attempted`);
+          window.location.reload();
+          return;
+        } else {
+          navigate('/');
+          window.location.reload();
+        }
+
         dispatch(setError(error.response.data.error));
-        console.log(error.response.data.error);
       }
     };
 
@@ -217,6 +273,7 @@ const Quiz = () => {
           email: data.email,
           contact: data.contact,
           answers: answers,
+          time: JSON.parse(localStorage.getItem('time')),
         },
         {
           headers: {
@@ -226,7 +283,8 @@ const Quiz = () => {
       );
 
       // dispatch(setSuccess('Your response has been recorded.'));
-      navigate(`/quiz/${category}/end`);
+      localStorage.clear();
+      navigate(`/quiz/${category}/submit`);
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -239,7 +297,10 @@ const Quiz = () => {
       <h1>{category}</h1>
 
       <h6>
-        <FaClock /> {convert(time).minutes}:{convert(time).seconds}
+        <FaClock /> {convert(time).minutes.toString().length === 1 && 0}
+        {convert(time).minutes}:
+        {convert(time).seconds.toString().length === 1 && 0}
+        {convert(time).seconds}
       </h6>
 
       {quiz && <Question quiz={quiz[index]} index={index} />}

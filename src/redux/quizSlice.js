@@ -21,6 +21,9 @@ const quizSlice = createSlice({
     },
     setOption: (state, action) => {
       state.answers[action.payload.index] = action.payload.option;
+      let ans = JSON.parse(localStorage.getItem('answers'));
+      ans[action.payload.index] = action.payload.option;
+      localStorage.setItem('answers', JSON.stringify(ans));
     },
   },
 });

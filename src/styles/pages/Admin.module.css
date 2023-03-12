@@ -1,0 +1,57 @@
+.admin .tab {
+  display: flex;
+}
+
+.admin .tab button {
+  border: none;
+  background: #3f315f;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: #fdfdfd;
+  margin: 10px;
+}
+
+.admin h3 {
+  color: #fdfdfd;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.admin .options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.options button {
+  border: none;
+  background: green;
+  border-radius: 5px;
+  outline: none;
+  padding: 11px 20px;
+  font-size: 16px;
+  color: #fdfdfd;
+  font-weight: 400;
+  margin: 10px;
+}
+
+.admin .submit {
+  background: #0cd1eb;
+  border: 1px solid #0cd1eb;
+  color: #2b2141;
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px 10px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s all ease-in-out;
+}

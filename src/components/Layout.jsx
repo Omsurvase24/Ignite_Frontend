@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import BrandingFooter from './BrandingFooter';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
@@ -20,6 +21,7 @@ const Layout = ({ children }) => {
         !pathname.includes('treasurer') &&
         !pathname.includes('quiz') &&
         !pathname.includes('admin') && <Footer />}
+      {pathname.includes('quiz') && <BrandingFooter />}
     </>
   );
 };

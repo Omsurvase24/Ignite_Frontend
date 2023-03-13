@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { Helmet } from 'react-helmet';
 import styles from '../styles/pages/Gallery.module.css';
 
@@ -95,8 +96,7 @@ const Gallery = () => {
           onClick={() => {
             setTab('All');
             setData(all);
-          }}
-        >
+          }}>
           All
         </button>
         <button
@@ -104,8 +104,7 @@ const Gallery = () => {
           onClick={() => {
             setTab('Inauguration');
             setData(inauguration);
-          }}
-        >
+          }}>
           Inauguration
         </button>
         <button
@@ -113,8 +112,7 @@ const Gallery = () => {
           onClick={() => {
             setTab('Events');
             setData(events);
-          }}
-        >
+          }}>
           Events
         </button>
       </div>

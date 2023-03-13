@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
-import styles from '../styles/pages/Register.module.css';
+import React, { useEffect, useState } from 'react';
+
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import { toast } from 'react-toastify';
+import styles from '../styles/pages/Register.module.css';
 
 const qrs = {
   50: '/qrs/50rs.png',
@@ -161,7 +162,9 @@ const Register = () => {
       formData.append('payment_screenshot', data.payment_screenshot);
 
       try {
-        console.log(`${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`);
+        console.log(
+          `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`
+        );
         const response = await axios.post(
           `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`,
           formData,
@@ -286,7 +289,9 @@ const Register = () => {
               className={styles.formcontrol}
               required
               value={data.first_name}
-              onChange={(e) => setData({ ...data, first_name: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, first_name: e.target.value })
+              }
             />
             <label htmlFor="firstname" className={styles.floatinglabel}>
               First name <span>*</span>
@@ -435,7 +440,9 @@ const Register = () => {
                       setData({ ...data, teammember3: e.target.value })
                     }
                   />
-                  <label className={styles.floatinglabel} htmlFor="teammember3">
+                  <label
+                    className={styles.floatinglabel}
+                    htmlFor="teammember3">
                     Team member
                   </label>
                 </div>
@@ -451,7 +458,9 @@ const Register = () => {
               className={styles.formcontrol}
               required
               value={data.payment_id}
-              onChange={(e) => setData({ ...data, payment_id: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, payment_id: e.target.value })
+              }
             />
             <label className={styles.floatinglabel} htmlFor="paymentid">
               Payment ID <span>*</span>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { Helmet } from 'react-helmet';
 import EventCard from '../components/event/EventCard';
 import EventPopup from '../components/event/EventPopup';

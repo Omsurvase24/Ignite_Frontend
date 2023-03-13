@@ -19,7 +19,6 @@ const data = [
           'Judging: Projects will be judged on the basis of their idea, execution, feasibility, usability, and development process. Judges will be looking for innovative and practical solutions that demonstrate technical excellence and creativity.',
           'Conduct: Participants are expected to behave professionally and respectfully towards each other and the judges. Any behavior that is considered inappropriate or disruptive will result in disqualification.',
           'Intellectual Property: Each team owns the intellectual property rights to their project. However, by participating in the hackathon, teams agree to allow the organizers to use their project for promotional and educational purposes.',
-          `These rules are just a sample and can be adjusted based on the specific needs and goals of your hackathon. It's important to have clear and fair rules to ensure a smooth and enjoyable hackathon experience for all participants.`,
         ],
         rounds: [
           {
@@ -120,7 +119,7 @@ const data = [
               'To solve all questions time limit is 35 minutes. ',
               `On the basis of how many questions are answered correctly, the participant's performance will be evaluated. `,
               'If there is a tie than Time metric will be considered. ',
-              'The Languages for the First round are C++, Python. ',
+              'The Languages for the Second round are C, C++ and Python. ',
               'Questions will be from all Languages. ',
               'After grading all students, the Winners would be declare. ',
             ],
@@ -139,8 +138,7 @@ const data = [
           'It gives a platform to experience the placement event.',
           'It will help you to find out what is the placement procedure and where do you stand.',
           'Candidates will be participating individually.',
-          'Entry fees will be 100 per team.',
-          'Fees structure Rs. 50',
+          'Fees structure Rs. 50 (per person)',
         ],
         rules: [
           'No internet access for any rounds.',

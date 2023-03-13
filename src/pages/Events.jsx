@@ -10,7 +10,7 @@ const Events = () => {
   return (
     <div className={styles.events}>
       <Helmet>
-        <title>Mpulse IngITe 2023 | Events</title>
+        <title>Mpulse Ignite 2023 | Events</title>
       </Helmet>
 
       {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}

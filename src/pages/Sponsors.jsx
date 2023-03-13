@@ -6,7 +6,7 @@ const Sponsors = () => {
   return (
     <div className={styles.sponsors}>
       <Helmet>
-        <title>Mpulse IngITe 2023 | Sponsors</title>
+        <title>Mpulse Ignite 2023 | Sponsors</title>
       </Helmet>
 
       <img src="/ignite-logo.png" alt="ignite-logo" />

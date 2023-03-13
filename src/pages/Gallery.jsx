@@ -82,7 +82,7 @@ const Gallery = () => {
   return (
     <div className={styles.gallery}>
       <Helmet>
-        <title>Mpulse IngITe 2023 | Gallery</title>
+        <title>Mpulse Ignite 2023 | Gallery</title>
       </Helmet>
 
       {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}

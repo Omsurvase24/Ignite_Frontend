@@ -10,12 +10,12 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Helmet>
-        <title>Mpulse IngITe 2023</title>
+        <title>Mpulse Ignite 2023</title>
       </Helmet>
 
       <img src="/ignite-logo.png" alt="ignite-logo" />
       <h3>P.E.S Modern College Of Engineering Shivajinagar, Pune</h3>
-      <h3>Department of Information Technology presents</h3>
+      <h3>Department Of Information Technology Presents</h3>
       <h1>MPULSE IGNITE 2023</h1>
       <h2>20 - 21 March 2023 </h2>
 

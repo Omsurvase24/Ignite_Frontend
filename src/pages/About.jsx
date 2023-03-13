@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className={styles.about}>
       <Helmet>
-        <title>Mpulse IngITe 2023 | About</title>
+        <title>Mpulse Ignite 2023 | About</title>
       </Helmet>
 
       {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}

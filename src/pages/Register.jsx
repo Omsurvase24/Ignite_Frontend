@@ -272,7 +272,7 @@ const Register = () => {
   return (
     <div className={styles.register}>
       <Helmet>
-        <title>Mpulse IngITe 2023 | Register</title>
+        <title>Mpulse Ignite 2023 | Register</title>
       </Helmet>
 
       {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}

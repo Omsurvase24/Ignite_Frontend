@@ -16,7 +16,13 @@ const qrs = {
 
 const Register = () => {
   const years = ['1st', '2nd', '3rd', '4th'];
-  const events = ['Bug Bounty', 'Design-X', 'Hackathon', 'Mock Placement'];
+  const events = [
+    'Bug Bounty',
+    'Design-X',
+    'Hackathon',
+    'Mock Placement',
+    'Escape Room',
+  ];
 
   const [data, setData] = useState({
     first_name: '',
@@ -58,7 +64,10 @@ const Register = () => {
         fee += 150;
       }
       setFees(fee);
-    } else if (data.event_name === 'Design-X') {
+    } else if (
+      data.event_name === 'Design-X' ||
+      data.event_name === 'Escape Room'
+    ) {
       let fee = 50;
       if (data.teammember1.length > 0) {
         fee += 50;
@@ -382,6 +391,7 @@ const Register = () => {
           </div>
         </div>
         {(data.event_name === 'Hackathon' ||
+          data.event_name === 'Escape Room' ||
           data.event_name === 'Design-X') && (
           <>
             <div className={styles.row1}>

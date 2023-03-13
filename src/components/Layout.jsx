@@ -15,12 +15,14 @@ const Layout = ({ children }) => {
     <>
       {!pathname.includes('treasurer') &&
         !pathname.includes('quiz') &&
-        !pathname.includes('admin') && <Navbar />}
+        !pathname.includes('admin') &&
+        !pathname.includes('editor') && <Navbar />}
       {children}
       {pathname !== '/' &&
         !pathname.includes('treasurer') &&
         !pathname.includes('quiz') &&
-        !pathname.includes('admin') && <Footer />}
+        !pathname.includes('admin') &&
+        !pathname.includes('editor') && <Footer />}
       {pathname.includes('quiz') && <BrandingFooter />}
     </>
   );

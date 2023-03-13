@@ -1,0 +1,199 @@
+.editorPage {
+  background: #000000;
+  padding: 30px;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+.editorPage .header {
+  background: #1c1b1b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editorPage .container {
+  display: flex;
+}
+
+.editorPage .left {
+  width: 40%;
+  max-height: 80vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #262626bf;
+  padding: 20px;
+  padding-right: 40px;
+  margin-right: 20px;
+}
+
+.editorPage .leftHeader {
+  background: #000000;
+  padding: 0px;
+}
+
+.leftHeader button {
+  border: none;
+  border-radius: 0px;
+  outline: none;
+  padding: 0px 15px;
+  font-size: 16px;
+  background: transparent;
+  color: #fdfdfd;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  height: 100%;
+  margin-right: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 15px;
+}
+
+.leftHeader .active {
+  background: #1c1b1b;
+}
+
+.left h2 {
+  color: #fdfdfd;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.left span {
+  background: #00ff004d;
+  padding: 4px 10px;
+  border-radius: 50px;
+  color: #38ff00;
+  font-size: 12px;
+  margin-bottom: 30px !important;
+}
+
+.left p {
+  color: #fdfdfd;
+  font-size: 15px;
+  line-height: 22px;
+  margin: 10px 0px;
+}
+
+.left .run {
+  position: absolute;
+  bottom: 45px;
+  left: 50px;
+  width: 36%;
+  padding: 10px;
+  background: #1c1b1b;
+}
+
+.run button {
+  border: none;
+  background: #494949 !important;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fdfdfd;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.run button:hover {
+  background: #414141bf;
+}
+
+.run .submit {
+  background: #008000 !important;
+  margin-left: 10px;
+  width: fit-content !important;
+}
+
+.run .submit:hover {
+  background: #006100 !important;
+}
+
+.editorPage .right {
+  width: 60%;
+  display: flex;
+}
+
+.editorPage .options {
+  margin-bottom: 10px;
+}
+
+.right button {
+  background: #217eff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0px 5px;
+  font-size: 16px;
+  color: #fdfdfd;
+  height: 37px;
+  width: 60px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.right button:hover {
+  background: #c43400 !important;
+}
+
+.options select {
+  border: none;
+  background: #262626bf;
+  border-radius: 5px;
+  outline: none;
+  padding: 8px 5px;
+  font-size: 16px;
+  color: #fdfdfd;
+}
+
+.editorPage .submission {
+  display: flex;
+  align-items: center;
+}
+
+.correctSubmission,
+.wrongSubmission {
+  background: #00610068;
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin: 15px 0px;
+}
+
+.wrongSubmission {
+  background: #ff171769;
+}
+
+.submission .error {
+  color: #ff6666;
+  font-weight: 500;
+}
+
+.submission .success {
+  color: #00bb00;
+  font-weight: 500;
+}
+
+.submission span {
+  margin-left: 80px;
+  margin-bottom: 0px !important;
+}
+
+.wrongSubmission span {
+  background: #ff30004d;
+  color: #ffc3c3;
+}
+
+.submission p {
+  color: #6d6d6d;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0px !important;
+}

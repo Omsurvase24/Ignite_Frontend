@@ -25,6 +25,7 @@ import Submit from './pages/Submit';
 import Attempted from './pages/Attempted';
 import ClearStorage from './pages/ClearStorage';
 import Appear from './pages/Appear';
+import CodeEditor from './pages/CodeEditor';
 
 const App = () => {
   useEffect(() => {
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/quiz/:category/start" element={<Quiz />} />
           <Route path="/quiz/:category/submit" element={<Submit />} />
           <Route path="/quiz/:category/attempted" element={<Attempted />} />
+          <Route path="/editor" element={<CodeEditor />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/appear" element={<Appear />} />

@@ -82,7 +82,6 @@
 .quizpage .navigation {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 700px;
   margin-top: 20px;
   padding: 0px 10px;
@@ -142,9 +141,8 @@
 .popup {
   height: 100%;
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: left;
-  flex-direction: column;
 }
 
 .popup h3 {
@@ -180,4 +178,52 @@
   background: #ff2b47;
   border-color: #ff2b47;
   color: #fdfdfd;
+}
+
+.quizpage .progress {
+  display: flex;
+  margin-top: 10px;
+  width: 700px;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress button,
+.examRules .complete,
+.examRules .incomplete {
+  background: #3f315f;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fdfdfd;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+}
+
+.progress .active {
+  background: #0cd1eb92;
+}
+
+.popup .examRules {
+  margin-left: 100px;
+  border-left: 2px solid #0cd1eb;
+  padding-left: 30px;
+  width: 50%;
+}
+
+.examRules ul li {
+  color: #fdfdfd;
+  margin: 15px 0px;
+  font-size: 1.05rem;
+  line-height: 25px;
+}
+
+.examRules .complete {
+  background: #0cd1eb92;
 }

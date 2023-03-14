@@ -98,6 +98,8 @@ const QuizSignup = () => {
 
   return (
     <div className={styles.register} style={{ padding: '0px' }}>
+      <img src="/ignite-logo.png" alt="ignite-logo" style={{ width: 150 }} />
+
       {openVertficationPopup && (
         <QuizVertficationPopup
           setAuthenticated={setAuthenticated}

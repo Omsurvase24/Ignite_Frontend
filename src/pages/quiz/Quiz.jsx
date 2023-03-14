@@ -213,9 +213,9 @@ const Quiz = () => {
         const response = await axios.post(
           `${process.env.REACT_APP_NODE_BACKEND}/apinode/quiz/get-quiz/${category}`,
           {
-            name: data.team_lead,
-            email: data.email,
-            contact: data.contact,
+            name: data?.team_lead,
+            email: data?.email,
+            contact: data?.contact,
           },
           {
             headers: {
@@ -259,12 +259,6 @@ const Quiz = () => {
 
   // on submit
   const handleOnSubmit = async (forcefully) => {
-    if (!forcefully) {
-      if (answers.includes('')) {
-        return dispatch(setError('Please attempt all the questions.'));
-      }
-    }
-
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_NODE_BACKEND}/apinode/quiz/end-quiz/${category}`,
@@ -293,7 +287,12 @@ const Quiz = () => {
 
   return (
     <div className={styles.quizpage}>
-      <span className={styles.time}></span>
+      <img
+        src="/ignite-logo.png"
+        alt="ignite-logo"
+        style={{ width: 120, position: 'fixed', left: 10, top: 10 }}
+      />
+
       <h1>{category}</h1>
 
       <h6>
@@ -305,25 +304,83 @@ const Quiz = () => {
 
       {quiz && <Question quiz={quiz[index]} index={index} />}
       {quiz && (
-        <div className={styles.navigation}>
-          <button onClick={prevQuestion}>
-            <FaAngleLeft /> Previous
-          </button>
-
-          {!(index < quiz.length - 1) && (
-            <button
-              onClick={() => handleOnSubmit(false)}
-              className={styles.submit}
-            >
-              Submit
+        <div
+          className={styles.navigation}
+          style={{
+            justifyContent:
+              index === quiz?.length - 1
+                ? 'start'
+                : index === 0
+                ? 'end'
+                : 'space-between',
+          }}
+        >
+          {index !== 0 && (
+            <button onClick={prevQuestion}>
+              <FaAngleLeft /> Previous
             </button>
           )}
 
-          <button onClick={nextQuestion}>
-            Next <FaAngleRight />
-          </button>
+          {index !== quiz.length - 1 && (
+            <button onClick={nextQuestion}>
+              Next <FaAngleRight />
+            </button>
+          )}
         </div>
       )}
+
+      <div
+        className={styles.navigation}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {!(index < quiz?.length - 1) && (
+          <button
+            onClick={() => handleOnSubmit(false)}
+            className={styles.submit}
+          >
+            Submit
+          </button>
+        )}
+      </div>
+
+      {quiz && (
+        <div>
+          <h5
+            style={{
+              textAlign: 'center',
+              fontSize: 18,
+              marginTop: 50,
+              color: '#b6b6b6',
+            }}
+          >
+            Quiz Summary
+          </h5>
+          <div className={styles.progress}>
+            {quiz.map((qz, index) => (
+              <button
+                className={answers[index] !== '' && styles.active}
+                onClick={() => setIndex(index)}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <marquee
+        width="700px"
+        direction="right"
+        height="100px"
+        style={{ marginTop: 50, color: '#a7a7a76c', fontWeight: 500 }}
+      >
+        {data?.team_lead} &nbsp;&nbsp;&nbsp; {data?.email} &nbsp;&nbsp;&nbsp;
+        {data?.contact} &nbsp;&nbsp;&nbsp; {data?.category}
+      </marquee>
     </div>
   );
 };

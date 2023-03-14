@@ -6,13 +6,15 @@ import { toast } from 'react-toastify';
 import styles from '../styles/pages/Register.module.css';
 
 const qrs = {
-  50: '/qrs/50rs.png',
-  100: '/qrs/100rs.png',
-  150: '/qrs/150rs.png',
-  200: '/qrs/200rs.png',
-  300: '/qrs/300rs.png',
-  450: '/qrs/450rs.png',
-  600: '/qrs/600rs.png',
+  30: '/qrs/30rs.jpeg',
+  60: '/qrs/60rs.jpeg',
+  90: '/qrs/90rs.jpeg',
+  120: '/qrs/120rs.jpeg',
+  150: '/qrs/150rs.jpeg',
+  200: '/qrs/200rs.jpeg',
+  300: '/qrs/300rs.jpeg',
+  450: '/qrs/450rs.jpeg',
+  600: '/qrs/600rs.jpeg',
 };
 
 const Register = () => {
@@ -52,7 +54,7 @@ const Register = () => {
       data.event_name === 'Bug Bounty' ||
       data.event_name === 'Mock Placement'
     ) {
-      setFees(50);
+      setFees(30);
     } else if (data.event_name === 'Hackathon') {
       let fee = 150;
       if (data.teammember1.length > 0) {
@@ -69,15 +71,15 @@ const Register = () => {
       data.event_name === 'Design-X' ||
       data.event_name === 'Escape Room'
     ) {
-      let fee = 50;
+      let fee = 30;
       if (data.teammember1.length > 0) {
-        fee += 50;
+        fee += 30;
       }
       if (data.teammember2.length > 0) {
-        fee += 50;
+        fee += 30;
       }
       if (data.teammember3.length > 0) {
-        fee += 50;
+        fee += 30;
       }
       setFees(fee);
     }

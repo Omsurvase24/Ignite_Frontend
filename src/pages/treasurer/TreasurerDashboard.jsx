@@ -56,7 +56,7 @@ const TreasurerDashboard = () => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/registrations/get/unreviewed`,
+          `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/registrations/get/reviewed`,
           {
             headers: {
               'Content-Type': 'application/json',

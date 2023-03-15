@@ -51,7 +51,7 @@ const data = [
       {
         intro: [
           'DesignX is a UI-UX designing event where participants can showcase their ideas in design tech. The event will wrap in single round where participants will be given problem statement according to which they to design a prototype/webpage using different tools such as Figma, Canva, Wix or any other open-source tool. The event will help participants to exchange ideas, collaborate on project and gain over more UI/UX design experience.',
-          'Fees structure Rs. 50 (per person)',
+          'Fees structure Rs. 30 (per person)',
         ],
         rules: [
           'Eligibility: The event is open to all individuals and teams who are interested in participation.',
@@ -86,7 +86,7 @@ const data = [
       {
         intro: [
           'It is a programming event to test the fundamentals of the most popular programming languages of all participants. The rounds will start with the basic concepts and slowly buildup to challenge their programming and logic application skills. This event will help developers to test and re-evaluate their basics and beginners to solidify their concepts. The languages permitted in this event are C++, C, Python.',
-          'Fees structure Rs. 50 (per person)',
+          'Fees structure Rs. 30 (per person)',
         ],
         rules: [
           'It is Solo event. ',
@@ -138,7 +138,7 @@ const data = [
           'It gives a platform to experience the placement event.',
           'It will help you to find out what is the placement procedure and where do you stand.',
           'Candidates will be participating individually.',
-          'Fees structure Rs. 50 (per person)',
+          'Fees structure Rs. 30 (per person)',
         ],
         rules: [
           'No internet access for any rounds.',
@@ -193,7 +193,7 @@ const data = [
       {
         intro: [
           'An escape room is a type of physical adventure game where players are imprisoned in a themed room and have a set amount of time to solve a series of puzzles and riddles in order to escape. The rooms are created so that you will be in the right environment to address the challenges presented.An escape room may have logic puzzles, hidden objects, ciphers, and physical challenges, among other types of puzzles. Players must utilize their talents of observation and deduction to find the clues because they are frequently concealed within the room. With teams of four individuals, escape rooms are typically played, and the activity is meant to promote communication and teamwork. The riddles require cooperation from the players.',
-          'Fees structure Rs. 50 (per person)',
+          'Fees structure Rs. 30 (per person)',
         ],
         rules: [
           'Participants must respect the property and facilities of the event venue and not cause any damage or disturbance.',

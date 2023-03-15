@@ -5,6 +5,7 @@ import { FaCloudDownloadAlt } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import TreasurerModel from '../../components/treasurer/TreasurerModal';
 import styles from '../../styles/pages/Treasurer.module.css';
 
 const options = ['reviewed', 'unreviewed'];
@@ -21,6 +22,8 @@ const TreasurerDashboard = () => {
   const [reloading, setReloading] = useState(false);
   const [accept, setAccept] = useState(false);
   const [decline, setDecline] = useState(false);
+
+  const [image, setImage] = useState('');
 
   const notifyError = (message) => {
     toast.error(message, {
@@ -173,8 +176,8 @@ const TreasurerDashboard = () => {
           <th>Event Name</th>
           <th>Payment ID</th>
           <th>Screenshot</th>
-          <th>Accept</th>
-          <th>Decline</th>
+          {state !== 'reviewed' && <th>Accept</th>}
+          {state !== 'reviewed' && <th>Decline</th>}
         </tr>
         {treasurerData.map((treasurer) => (
           <tr key={treasurer._id}>
@@ -187,26 +190,37 @@ const TreasurerDashboard = () => {
             <td>
               <img
                 src={`${process.env.REACT_APP_FLASK_BACKEND}/api/static${treasurer.payment_screenshot_path}`}
-                alt=""
+                alt="screenshot"
+                onClick={() =>
+                  setImage(
+                    `${process.env.REACT_APP_FLASK_BACKEND}/api/static${treasurer.payment_screenshot_path}`
+                  )
+                }
               />
             </td>
-            <td>
-              <button
-                className={styles.accept}
-                onClick={() => handleAccept(treasurer._id)}
-                disabled={accept || state === 'reviewed'}>
-                {accept ? 'Accpeting...' : 'Accpet'}
-              </button>
-            </td>
-            <td>
-              <button
-                onClick={() => handleDecline(treasurer._id)}
-                disabled={decline || state === 'reviewed'}>
-                {decline ? 'Declining...' : 'Decline'}
-              </button>
-            </td>
+            {state !== 'reviewed' && (
+              <td>
+                <button
+                  className={styles.accept}
+                  onClick={() => handleAccept(treasurer._id)}
+                  disabled={accept || state === 'reviewed'}>
+                  {accept ? 'Accepting...' : 'Accept'}
+                </button>
+              </td>
+            )}
+            {state !== 'reviewed' && (
+              <td>
+                <button
+                  onClick={() => handleDecline(treasurer._id)}
+                  disabled={decline || state === 'reviewed'}>
+                  {decline ? 'Declining...' : 'Decline'}
+                </button>
+              </td>
+            )}
           </tr>
         ))}
+
+        {image && <TreasurerModel image={image} setImage={setImage} />}
       </table>
     </div>
   );

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+
 import axios from 'axios';
+import { FaCloudDownloadAlt } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { FaCloudDownloadAlt } from 'react-icons/fa';
 import styles from '../../styles/pages/Treasurer.module.css';
 
 const options = ['reviewed', 'unreviewed'];
@@ -136,7 +137,9 @@ const TreasurerDashboard = () => {
 
       notifySuccess(`Application declined.`);
     } catch (error) {
-      notifyError('Error occured while decline application. Please try again.');
+      notifyError(
+        'Error occured while decline application. Please try again.'
+      );
       console.log(error);
     } finally {
       setDecline(false);
@@ -183,7 +186,7 @@ const TreasurerDashboard = () => {
             <td>{treasurer.payment_id}</td>
             <td>
               <img
-                src={`${process.env.REACT_APP_FLASK_BACKEND}/static${treasurer.payment_screenshot_path}`}
+                src={`${process.env.REACT_APP_FLASK_BACKEND}/api/static${treasurer.payment_screenshot_path}`}
                 alt=""
               />
             </td>
@@ -191,16 +194,14 @@ const TreasurerDashboard = () => {
               <button
                 className={styles.accept}
                 onClick={() => handleAccept(treasurer._id)}
-                disabled={accept || state === 'reviewed'}
-              >
+                disabled={accept || state === 'reviewed'}>
                 {accept ? 'Accpeting...' : 'Accpet'}
               </button>
             </td>
             <td>
               <button
                 onClick={() => handleDecline(treasurer._id)}
-                disabled={decline || state === 'reviewed'}
-              >
+                disabled={decline || state === 'reviewed'}>
                 {decline ? 'Declining...' : 'Decline'}
               </button>
             </td>

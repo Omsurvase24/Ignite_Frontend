@@ -10,14 +10,14 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Helmet>
-        <title>Mpulse Ignite 2023</title>
+        <title>Mpulse Ignite 2024</title>
       </Helmet>
 
       <img src="/ignite-logo.png" alt="ignite-logo" />
       <h3>P.E.S Modern College Of Engineering Shivajinagar, Pune</h3>
       <h3>Department Of Information Technology Presents</h3>
-      <h1>MPULSE IGNITE 2023</h1>
-      <h2>20 - 21 March 2023 </h2>
+      <h1>MPULSE IGNITE 2024</h1>
+      <h2>23 - 24 March 2024 </h2>
 
       <div>
         <button onClick={() => navigate('/register')}>Register Here</button>

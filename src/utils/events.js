@@ -43,93 +43,9 @@ const data = [
       },
     ],
   },
+
   {
     id: 2,
-    title: 'Design X',
-    image: '/events/designx.png',
-    data: [
-      {
-        intro: [
-          'DesignX is a UI-UX designing event where participants can showcase their ideas in design tech. The event will wrap in single round where participants will be given problem statement according to which they to design a prototype/webpage using different tools such as Figma, Canva, Wix or any other open-source tool. The event will help participants to exchange ideas, collaborate on project and gain over more UI/UX design experience.',
-          'Fees structure Rs. 30 (per person)',
-        ],
-        rules: [
-          'Eligibility: The event is open to all individuals and teams who are interested in participation.',
-          'Timeframe: Participants have strictly 2hrs to complete their submission.',
-          'Tools: Any open browser design tool can be used.',
-          'Ethics: Participants are expected not to engage in any activity that is illegal and unethical.',
-          `Submission Requirements: The final submission should include a detailed wireframe, high-fidelity prototype of the app's key features and functionalities.`,
-        ],
-        rounds: [
-          {
-            roundNo: 1,
-            roundName: 'Design X',
-            roundDesc: [
-              'All participants have to design UI/UX based prototype using different designing tools.',
-              'Participants are free to use Open Browser tools such as Figma, Canva, Wix or any other design tool.',
-              'Event will be organized in group of 1-3 participants (Max 3 participants).',
-              `Time limit for Round 1 - 2hrs.`,
-              'On basis of design creativity, efficient use of tools and implementation of skills , the participants performance will be evaluated.',
-              'All participants will get participation certificate.',
-              'It will be appreciated if participants will bring their own device.',
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: 'Bug Bounty',
-    image: '/events/bugbounty.png',
-    data: [
-      {
-        intro: [
-          'It is a programming event to test the fundamentals of the most popular programming languages of all participants. The rounds will start with the basic concepts and slowly buildup to challenge their programming and logic application skills. This event will help developers to test and re-evaluate their basics and beginners to solidify their concepts. The languages permitted in this event are C++, C, Python.',
-          'Fees structure Rs. 30 (per person)',
-        ],
-        rules: [
-          'It is Solo event. ',
-          'Electronic Devices not allowed. ',
-          'Internet access is prohibited. ',
-          'If anyone is found violating these rules, they will be immediately disqualified from the event. ',
-          'Winners would be selected on basis of Score and Time (if Tie). ',
-          'Final Decision rest with the Organizers. ',
-        ],
-        rounds: [
-          {
-            roundNo: 1,
-            roundName: 'MCQ Quiz',
-            roundDesc: [
-              'Each participant will be given 15 randomly selected questions which will be consisting of some bugs you have to choose correct option from MCQ.',
-              'To solve all questions time limit is 15 minutes.',
-              `On the basis of how many questions are answered correctly, the participant's performance will be evaluated.`,
-              'If there is a tie than Time metric will be considered.',
-              'The Languages for the First round are C, C++, Python.',
-              'Questions will be from all Languages',
-              'After grading all students, the top scorers will be selected for the next round.',
-            ],
-          },
-          {
-            roundNo: 2,
-            roundName: 'Quiz',
-            roundDesc: [
-              'Each participant will be given 7 randomly selected questions which will be consisting of some bugs.',
-              'Bugged code will be given you have to edit the bugged line and find the correct output. ',
-              'To solve all questions time limit is 35 minutes. ',
-              `On the basis of how many questions are answered correctly, the participant's performance will be evaluated. `,
-              'If there is a tie than Time metric will be considered. ',
-              'The Languages for the Second round are C, C++ and Python. ',
-              'Questions will be from all Languages. ',
-              'After grading all students, the Winners would be declare. ',
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 4,
     title: 'Mock Placement',
     image: '/events/mockplacement.png',
     data: [
@@ -186,7 +102,7 @@ const data = [
     ],
   },
   {
-    id: 5,
+    id: 3,
     title: 'Escape Room',
     image: '/events/escaperoom.png',
     data: [
